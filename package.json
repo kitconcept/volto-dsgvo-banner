@@ -1,0 +1,28 @@
+{
+  "name": "@kitconcept/volto-dsgvo-banner",
+  "version": "0.1.0",
+  "description": "volto-dsgvo-banner: Volto add-on",
+  "main": "src/index.js",
+  "license": "MIT",
+  "keywords": [
+    "volto-addon",
+    "volto",
+    "plone",
+    "react"
+  ],
+  "scripts": {
+    "i18n": "rm -rf build/messages && NODE_ENV=production i18n --addon"
+  },
+  "dependencies": {
+    "@plone/scripts": "*"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/kitconcept/volto-dsgvo-banner.git"
+  },
+  "author": "@kindermann",
+  "bugs": {
+    "url": "https://github.com/kitconcept/volto-dsgvo-banner/issues"
+  },
+  "homepage": "https://github.com/kitconcept/volto-dsgvo-banner#readme"
+}
