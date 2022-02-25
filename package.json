@@ -14,7 +14,8 @@
     "i18n": "rm -rf build/messages && NODE_ENV=production i18n --addon"
   },
   "dependencies": {
-    "@plone/scripts": "*"
+    "@plone/scripts": "*",
+    "react-ga": "^3.3.0"
   },
   "repository": {
     "type": "git",

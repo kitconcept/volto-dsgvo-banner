@@ -1,4 +1,5 @@
-import DSGVOBanner from './DSGVOBanner/DSGVOBanner';
-import DSGVOBannerEdit from './DSGVOBanner/DSGVOBannerEdit';
+import CookieBlockView from './CookieBlock/View';
+import CookieBlockEdit from './CookieBlock/Edit';
+import CookieModal from './DSGVO-Banner/DSGVO-Banner'
 
-export { DSGVOBanner, DSGVOBannerEdit };
+export { CookieBlockView, CookieBlockEdit,CookieModal };

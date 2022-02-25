@@ -1,0 +1,31 @@
+// Cookie Block
+.cookie-block {
+  .ui.form {
+    margin-bottom: 1rem;
+  }
+  margin-bottom:1rem;
+}
+
+// Cookie Modal
+.ui.modal.cookie-modal {
+  .actions {
+    @media only screen and (max-width: 900px) {
+      flex-direction: column;
+
+      .ui.button.branded.olive,
+      .ui.button.branded.blue.inverted {
+        padding: 20px 15px;
+      }
+    }
+  }
+
+  @media only screen and (max-width: 320px) {
+    margin-top: 10px !important;
+
+    .actions .ui.button {
+      padding: 10px 15px !important;
+      font-size: 14px;
+      letter-spacing: normal;
+    }
+  }
+}
