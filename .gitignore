@@ -1,0 +1,15 @@
+.coverage
+.vscode
+*.log
+*.mo
+*.py?
+*.swp
+# dirs
+node_modules/
+# excludes
+!.coveragerc
+!.editorconfig
+!.gitattributes
+!.gitignore
+!.gitkeep
+!.travis.yml
