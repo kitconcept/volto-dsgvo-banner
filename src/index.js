@@ -1,31 +1,22 @@
-import tableSVG from '@plone/volto/icons/table.svg';
+import { Banner } from './components';
+import { DSGVOBanner } from './reducers';
 
-import { CookieBlockView, CookieBlockEdit } from './components';
-import cookieConsent from './reducers/cookieConsent/cookieConsent'
-
-import "./theme/styles.less"
+import './theme/main.less';
 
 export default (config) => {
-  config.blocks.blocksConfig.dsgvoBanner = {
-    id: 'dsgvoBanner',
-    title: 'DSGVO',
-    icon: tableSVG,
-    group: 'common',
-    view: CookieBlockView,
-    edit: CookieBlockEdit,
-    restricted: false,
-    mostUsed: true,
-    sidebarTab: 1,
-    security: {
-      addPermission: [],
-      view: [],
-    },
-  };
-
-
+  config.settings.appExtras.push({
+    match: '',
+    component: Banner,
+  });
   config.addonReducers = {
     ...config.addonReducers,
-    cookieConsent,
+    DSGVOBanner,
+  };
+  config.settings.DSGVOBanner = {
+    trackingId: 'UA-123456789-1',
+    modules: ['tracking', 'youtube', 'facebook'],
+    privacy_url: '/privacy',
+    ...config.settings.DSGVOBanner,
   };
   return config;
 };

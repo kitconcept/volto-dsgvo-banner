@@ -1,23 +1,7 @@
 /**
- * Root reducer.
- * @module reducers/root
+ * Add your reducers here
+ * @module reducers
  */
 
- import defaultReducers from '@plone/volto/reducers';
- import cookieConsent from './cookieConsent/cookieConsent';
- 
- /**
-  * Root reducer.
-  * @function
-  * @param {Object} state Current state.
-  * @param {Object} action Action to be handled.
-  * @returns {Object} New state.
-  */
- const reducers = {
-   ...defaultReducers,
-   cookieConsent,
-   // Add your reducers here
- };
- 
- export default reducers;
- 
+import { DSGVOBanner } from './banner/banner';
+export { DSGVOBanner };

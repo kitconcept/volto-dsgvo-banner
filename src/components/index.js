@@ -1,5 +1,5 @@
-import CookieBlockView from './CookieBlock/View';
-import CookieBlockEdit from './CookieBlock/Edit';
-import CookieModal from './DSGVO-Banner/DSGVO-Banner'
+import Banner from './Banner/Banner';
+import IfConfirm from './IfConfirm/IfConfirm';
 
-export { CookieBlockView, CookieBlockEdit,CookieModal };
+export { Banner };
+export { IfConfirm };

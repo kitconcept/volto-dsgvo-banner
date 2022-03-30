@@ -15,7 +15,7 @@
   },
   "dependencies": {
     "@plone/scripts": "*",
-    "react-ga": "^3.3.0"
+    "react-ga": "3.3.0"
   },
   "repository": {
     "type": "git",

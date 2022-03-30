@@ -4,4 +4,5 @@
  * @example
  * export const UPDATE_CONTENT = 'UPDATE_CONTENT';
  */
-export const UPDATE_COOKIE_CONSENT = 'UPDATE_COOKIE_CONSENT';
+export const SHOW_DSGVO_BANNER = 'SHOW_DSGVO_BANNER';
+export const HIDE_DSGVO_BANNER = 'HIDE_DSGVO_BANNER';

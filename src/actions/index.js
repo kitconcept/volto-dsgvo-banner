@@ -10,8 +10,6 @@
  *   searchContent,
  * };
  */
- import updateCookieConsent from './cookies/cookies';
- 
- export {
-   updateCookieConsent,
- };
+import { showDSGVOBanner, hideDSGVOBanner } from './banner/banner';
+
+export { showDSGVOBanner, hideDSGVOBanner };
