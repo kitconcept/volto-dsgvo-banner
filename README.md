@@ -23,6 +23,10 @@ If you view a piece of content where you haven't accepted the cookie for you wil
 
 ![Message](https://github.com/kitconcept/volto-dsgvo-banner/raw/master/message.png)
 
+There is also a block which you can insert on your data protection page to adjust the settings there.
+
+![Block](https://github.com/kitconcept/volto-dsgvo-banner/raw/master/block.png)
+
 ## Installation
 
 Create a new Volto project (you can skip this step if you already have one):
