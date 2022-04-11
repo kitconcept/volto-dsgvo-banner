@@ -6,6 +6,7 @@
 
 ### Feature
 
+- Added Matomo support @robgietema
 - Initial release @kindermann @robgietema
 
 ### Bugfix
