@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from 'react';
+import React, { useState } from 'react';
 import { includes } from 'lodash';
 import { Button, Modal, Checkbox, Form } from 'semantic-ui-react';
 import { useCookies } from 'react-cookie';
@@ -6,8 +6,8 @@ import { Link } from 'react-router-dom';
 import { connect } from 'react-redux';
 import config from '@plone/volto/registry';
 import { useIntl, defineMessages, FormattedMessage } from 'react-intl';
-import { useLocation } from 'react-router-dom';
-import ReactGA from 'react-ga';
+import Google from './Google';
+import Matomo from './Matomo';
 
 import { hideDSGVOBanner } from '../../actions';
 
@@ -28,7 +28,6 @@ const Banner = (props) => {
   const [cookies, setCookie, removeCookie] = useCookies();
   const [configureCookies, setConfigureCookies] = useState(false);
   const showConfirmModal = !Number(cookies.confirm_cookies) || props.show;
-  const location = useLocation();
   const intl = useIntl();
 
   const [confirmTracking, setConfirmTracking] = useState(
@@ -40,20 +39,6 @@ const Banner = (props) => {
   const [confirmFacebook, setConfirmFacebook] = useState(
     !!Number(cookies.confirm_facebook),
   );
-
-  if (__CLIENT__) {
-    ReactGA.initialize(config.settings.DSGVOBanner.trackingId, {
-      gaOptions: {
-        anonymizeIp: true,
-      },
-    });
-  }
-
-  useEffect(() => {
-    if (confirmTracking) {
-      ReactGA.pageview(location.pathname);
-    }
-  }, [location, confirmTracking]);
 
   const expiryDate = new Date();
   expiryDate.setMonth(expiryDate.getMonth() + 1);
@@ -99,9 +84,10 @@ const Banner = (props) => {
 
     props.hideDSGVOBanner();
   };
-
   return (
     <>
+      {config.settings.DSGVOBanner.tracker.type === 'google' && <Google />}
+      {config.settings.DSGVOBanner.tracker.type === 'matomo' && <Matomo />}
       <Modal
         id="question-landing"
         open={showConfirmModal}
