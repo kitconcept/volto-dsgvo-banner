@@ -11,8 +11,7 @@ const Matomo = ({ matomoTracker }) => {
   if (__CLIENT__) {
     tracker = new matomoTracker.default({
       urlBase: config.settings.DSGVOBanner.tracker.urlBase,
-      siteId: config.settings.DSGVOBanner.tracker.siteId,
-      userId: config.settings.DSGVOBanner.tracker.id,
+      siteId: config.settings.DSGVOBanner.tracker.id,
     });
   }
 
