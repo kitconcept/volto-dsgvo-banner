@@ -11,7 +11,13 @@
     "react"
   ],
   "scripts": {
-    "i18n": "rm -rf build/messages && NODE_ENV=production i18n --addon"
+    "i18n": "rm -rf build/messages && NODE_ENV=production i18n --addon",
+    "cypress:open": "NODE_ENV=production ../../../node_modules/cypress/bin/cypress open",
+    "cypress:run": "NODE_ENV=test ../../../node_modules/cypress/bin/cypress run",
+    "cypress:start-frontend": "cd ../../../ && RAZZLE_API_PATH=http://localhost:55001/plone yarn start",
+    "ci:test-acceptance-server": "make test-acceptance-server",
+    "cy:test:fixture:setup": "node cypress/support/reset-fixture.js",
+    "cy:test:fixture:teardown": "node cypress/support/reset-fixture.js teardown"
   },
   "dependencies": {
     "@datapunt/matomo-tracker-js": "0.5.1",
