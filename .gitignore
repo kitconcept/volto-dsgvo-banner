@@ -13,3 +13,4 @@ node_modules/
 !.gitignore
 !.gitkeep
 !.travis.yml
+build
