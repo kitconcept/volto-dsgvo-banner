@@ -1,4 +1,4 @@
-import React, { useEffect } from 'react';
+import { useEffect } from 'react';
 import { useCookies } from 'react-cookie';
 import config from '@plone/volto/registry';
 import { useLocation } from 'react-router-dom';
