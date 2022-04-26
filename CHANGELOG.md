@@ -11,6 +11,8 @@
 
 ### Bugfix
 
+- Fixed privacy policy text @robgietema
+
 ### Internal
 
 - Added github workflows @robgietema

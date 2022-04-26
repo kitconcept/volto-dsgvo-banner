@@ -36,29 +36,26 @@ msgid "Customize Privacy Settings"
 msgstr "Privacy-instellingen aanpassen"
 
 #: components/Banner/Banner
-# defaultMessage: Data protection
-msgid "Data protection"
-msgstr "Privacyverklaring"
-
-#: components/Banner/Banner
 # defaultMessage: Privacy Notice
 msgid "Privacy Notice"
 msgstr "Privacyverklaring"
 
 #: components/Banner/Banner
+# defaultMessage: Privacy Policy
+msgid "Privacy Policy"
+msgstr "Privacybeleid"
+
+#: components/Banner/Banner
+#: components/Block/View
 # defaultMessage: Save
 msgid "Save"
 msgstr "Opslaan"
 
 #: components/Banner/Banner
+#: components/Block/View
 # defaultMessage: Technically required
 msgid "Technically required"
 msgstr "Technisch vereist"
-
-#: components/Banner/Banner
-# defaultMessage: To
-msgid "To"
-msgstr "Naar"
 
 #: components/Banner/Banner
 # defaultMessage: To give you the best possible user experience, we use cookies on our website. Cookies required for the operation of the site are set automatically. You can also allow other cookies. You can {agree_all_cookies} or {adjust_privacy_settings}.
@@ -66,9 +63,15 @@ msgid "To give you the best possible user experience, we use cookies on our webs
 msgstr "Om u de best mogelijke gebruikerservaring te bieden, gebruiken we cookies op onze website. Cookies die nodig zijn voor de werking van de site worden automatisch ingesteld. U kunt ook andere cookies toestaan. U kunt {agree_all_cookies} of {adjust_privacy_settings}."
 
 #: components/Banner/Banner
+#: components/Block/View
 # defaultMessage: Tracking
 msgid "Tracking"
 msgstr "Tracking"
+
+#: components/Banner/Banner
+# defaultMessage: You can find more information on the used cookies and how you can subsequently revoke your consent in our
+msgid "You can find more information on the used cookies and how you can subsequently revoke your consent in our"
+msgstr "Meer informatie over de gebruikte cookies en hoe u uw toestemming vervolgens kunt intrekken, vindt u in ons"
 
 #: components/IfConfirm/IfConfirm
 # defaultMessage: You can not view this content at this moment because you have selected to disable {module} cookies in the privacy settings.

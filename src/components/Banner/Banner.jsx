@@ -130,12 +130,15 @@ const Banner = (props) => {
                 />
               </p>
               <p>
-                <FormattedMessage id="To" defaultMessage="To" />{' '}
+                <FormattedMessage
+                  id="You can find more information on the used cookies and how you can subsequently revoke your consent in our"
+                  defaultMessage="You can find more information on the used cookies and how you can subsequently revoke your consent in our"
+                />{' '}
                 <b>
                   <Link to={privacy_url} onClick={confirmSelection}>
                     <FormattedMessage
-                      id="Data protection"
-                      defaultMessage="Data protection"
+                      id="Privacy Policy"
+                      defaultMessage="Privacy Policy"
                     />
                   </Link>
                 </b>
