@@ -32,28 +32,25 @@ msgid "Customize Privacy Settings"
 msgstr ""
 
 #: components/Banner/Banner
-# defaultMessage: Data protection
-msgid "Data protection"
-msgstr ""
-
-#: components/Banner/Banner
 # defaultMessage: Privacy Notice
 msgid "Privacy Notice"
 msgstr ""
 
 #: components/Banner/Banner
+# defaultMessage: Privacy Policy
+msgid "Privacy Policy"
+msgstr ""
+
+#: components/Banner/Banner
+#: components/Block/View
 # defaultMessage: Save
 msgid "Save"
 msgstr ""
 
 #: components/Banner/Banner
+#: components/Block/View
 # defaultMessage: Technically required
 msgid "Technically required"
-msgstr ""
-
-#: components/Banner/Banner
-# defaultMessage: To
-msgid "To"
 msgstr ""
 
 #: components/Banner/Banner
@@ -62,8 +59,14 @@ msgid "To give you the best possible user experience, we use cookies on our webs
 msgstr ""
 
 #: components/Banner/Banner
+#: components/Block/View
 # defaultMessage: Tracking
 msgid "Tracking"
+msgstr ""
+
+#: components/Banner/Banner
+# defaultMessage: You can find more information on the used cookies and how you can subsequently revoke your consent in our
+msgid "You can find more information on the used cookies and how you can subsequently revoke your consent in our"
 msgstr ""
 
 #: components/IfConfirm/IfConfirm
