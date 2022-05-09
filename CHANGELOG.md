@@ -6,8 +6,9 @@
 
 ### Feature
 
-- Added Matomo support @robgietema
 - Initial release @kindermann @robgietema
+- Added Matomo support @robgietema
+- Add multi-lingual privacy policy links @robgietema
 
 ### Bugfix
 

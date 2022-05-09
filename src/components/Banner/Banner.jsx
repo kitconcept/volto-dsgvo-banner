@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import { includes } from 'lodash';
+import { includes, isObject } from 'lodash';
 import { Button, Modal, Checkbox, Form } from 'semantic-ui-react';
 import { useCookies } from 'react-cookie';
 import { Link } from 'react-router-dom';
@@ -23,13 +23,16 @@ const messages = defineMessages({
 });
 
 const Banner = (props) => {
-  const privacy_url = config.settings.DSGVOBanner.privacy_url;
+  let privacy_url = config.settings.DSGVOBanner.privacy_url;
   const modules = config.settings.DSGVOBanner.modules;
   const [cookies, setCookie, removeCookie] = useCookies();
   const [configureCookies, setConfigureCookies] = useState(false);
   const showConfirmModal = !Number(cookies.confirm_cookies) || props.show;
   const intl = useIntl();
 
+  if (isObject(privacy_url)) {
+    privacy_url = privacy_url[intl.locale];
+  }
   const [confirmTracking, setConfirmTracking] = useState(
     !!Number(cookies.confirm_tracking),
   );
