@@ -6,6 +6,8 @@
 
 ### Feature
 
+- Always set focus on Banner, improve scroll behavior for mobile @steffenri
+
 ### Bugfix
 
 ### Internal

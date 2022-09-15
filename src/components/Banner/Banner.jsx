@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import { includes, isObject } from 'lodash';
 import { Button, Modal, Checkbox, Form } from 'semantic-ui-react';
 import { useCookies } from 'react-cookie';
@@ -8,6 +8,7 @@ import config from '@plone/volto/registry';
 import { useIntl, defineMessages, FormattedMessage } from 'react-intl';
 import Google from './Google';
 import Matomo from './Matomo';
+import { BodyClass } from '@plone/volto/helpers';
 
 import { hideDSGVOBanner } from '../../actions';
 
@@ -87,10 +88,19 @@ const Banner = (props) => {
 
     props.hideDSGVOBanner();
   };
+
+  useEffect(() => {
+    if (document && showConfirmModal) {
+      document.getElementById('question-landing').focus();
+    }
+    // eslint-disable-next-line react-hooks/exhaustive-deps
+  }, []);
+
   return (
     <>
       {config.settings.DSGVOBanner.tracker.type === 'google' && <Google />}
       {config.settings.DSGVOBanner.tracker.type === 'matomo' && <Matomo />}
+      <BodyClass className={showConfirmModal && 'openCookieBanner'} />
       <Modal
         id="question-landing"
         open={showConfirmModal}
