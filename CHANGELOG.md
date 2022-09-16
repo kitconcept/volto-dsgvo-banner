@@ -2,15 +2,10 @@
 
 ## 1.0.1 (unreleased)
 
-### Breaking
-
 ### Feature
 
 - Always set focus on Banner, improve scroll behavior for mobile @steffenri
 
-### Bugfix
-
-### Internal
 
 ## 1.0.0 (2022-09-02)
 
