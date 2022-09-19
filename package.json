@@ -1,6 +1,6 @@
 {
   "name": "@kitconcept/volto-dsgvo-banner",
-  "version": "1.1.0",
+  "version": "1.1.1",
   "description": "volto-dsgvo-banner: Volto add-on",
   "main": "src/index.js",
   "license": "MIT",
