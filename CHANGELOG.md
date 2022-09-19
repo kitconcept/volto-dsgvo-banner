@@ -2,15 +2,9 @@
 
 ## 1.1.1 (unreleased)
 
-### Breaking
-
-### Feature
-
 ### Bugfix
 
 - Fix mobile modal @robgietema
-
-### Internal
 
 ## 1.1.0 (2022-09-16)
 
