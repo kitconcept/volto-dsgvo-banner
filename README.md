@@ -1,4 +1,4 @@
-# Volto DSGVO Banner <img src="https://raw.githubusercontent.com/plone/pastanaga-icons/master/Icons/divide-horizontal.svg">
+# Volto DSGVO Banner
 
 [![NPM](https://img.shields.io/npm/v/@kitconcept/volto-dsgvo-banner.svg)](https://www.npmjs.com/package/@kitconcept/volto-dsgvo-banner)
 [![Build Status](https://github.com/kitconcept/volto-dsgvo-banner/actions/workflows/code.yml/badge.svg)](https://github.com/kitconcept/volto-dsgvo-banner/actions)
