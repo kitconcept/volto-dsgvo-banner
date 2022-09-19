@@ -8,6 +8,8 @@
 
 ### Bugfix
 
+- Fix mobile modal @robgietema
+
 ### Internal
 
 ## 1.1.0 (2022-09-16)
@@ -15,7 +17,6 @@
 ### Feature
 
 - Always set focus on Banner, improve scroll behavior for mobile @steffenri
-
 
 ## 1.0.0 (2022-09-02)
 
