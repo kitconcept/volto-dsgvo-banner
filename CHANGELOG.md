@@ -8,6 +8,8 @@
 
 ### Bugfix
 
+- Fix cookiebanner on small devices (make it fullscreen) @steffenri
+
 ### Internal
 
 ## 1.1.1 (2022-09-19)
