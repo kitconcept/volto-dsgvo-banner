@@ -43,6 +43,9 @@ const Banner = (props) => {
   const [confirmFacebook, setConfirmFacebook] = useState(
     !!Number(cookies.confirm_facebook),
   );
+  const [confirmGoogle, setConfirmGoogle] = useState(
+    !!Number(cookies.confirm_google),
+  );
 
   const expiryDate = new Date();
   expiryDate.setMonth(expiryDate.getMonth() + 1);
@@ -74,6 +77,12 @@ const Banner = (props) => {
       removeCookie('confirm_youtube', options);
     }
 
+    if (confirmGoogle) {
+      setCookie('confirm_google', 1, options);
+    } else {
+      removeCookie('confirm_google', options);
+    }
+
     setCookie('confirm_cookies', 1, options);
     props.hideDSGVOBanner();
   };
@@ -84,6 +93,7 @@ const Banner = (props) => {
 
     setCookie('confirm_facebook', 1, options);
     setCookie('confirm_youtube', 1, options);
+    setCookie('confirm_google', 1, options);
     setCookie('confirm_cookies', 1, options);
 
     props.hideDSGVOBanner();
@@ -224,6 +234,16 @@ const Banner = (props) => {
                       label="Facebook"
                       onChange={() => setConfirmFacebook(!confirmFacebook)}
                       checked={confirmFacebook}
+                    />
+                  </Form.Field>
+                )}
+                {includes(modules, 'google') && (
+                  <Form.Field>
+                    <Checkbox
+                      toggle
+                      label="Google"
+                      onChange={() => setConfirmGoogle(!confirmGoogle)}
+                      checked={confirmGoogle}
                     />
                   </Form.Field>
                 )}
