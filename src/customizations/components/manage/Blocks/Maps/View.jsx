@@ -10,7 +10,7 @@ import cx from 'classnames';
 import { compose } from 'redux';
 import { withBlockExtensions } from '@plone/volto/helpers';
 
-import { IfConfirm } from 'volto-dsgvo-banner/components';
+import { IfConfirm } from '../../../../../components';
 
 /**
  * View image block class.
