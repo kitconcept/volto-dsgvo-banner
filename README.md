@@ -69,6 +69,7 @@ You can customize your Google Analytics tracking id, the url where your privacy 
 
 ```
 config.settings.DSGVOBanner = {
+  ...config.settings.DSGVOBanner,
   trackingId: 'UA-123456789-1',
   modules: ['tracking', 'youtube', 'facebook'],
   privacy_url: '/privacy',
