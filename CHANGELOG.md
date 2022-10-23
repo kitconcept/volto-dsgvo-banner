@@ -6,6 +6,8 @@
 
 ### Feature
 
+- Romanian translations @avoinea
+
 ### Bugfix
 
 ### Internal
