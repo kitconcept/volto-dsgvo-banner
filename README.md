@@ -69,8 +69,23 @@ You can customize your Google Analytics tracking id, the url where your privacy 
 
 ```
 config.settings.DSGVOBanner = {
-  ...config.settings.DSGVOBanner,
+  ...(config.settings.DSGVOBanner || {}),
   trackingId: 'UA-123456789-1',
+  modules: ['tracking', 'youtube', 'facebook'],
+  privacy_url: '/privacy',
+};
+```
+
+If you want to use Matomo instead of Google Analytics:
+
+```
+config.settings.DSGVOBanner = {
+  ...(config.settings.DSGVOBanner || {}),
+  tracker: {
+    type: 'matomo',
+    id: 3,
+    urlBase: "https://matomo.example.com/"
+  },
   modules: ['tracking', 'youtube', 'facebook'],
   privacy_url: '/privacy',
 };
