@@ -100,7 +100,7 @@ const Banner = (props) => {
     <>
       {config.settings.DSGVOBanner.tracker.type === 'google' && <Google />}
       {config.settings.DSGVOBanner.tracker.type === 'matomo' && <Matomo />}
-      <BodyClass className={showConfirmModal && 'openCookieBanner'} />
+      <BodyClass className={showConfirmModal ? 'openCookieBanner': ''} />
       <Modal
         id="question-landing"
         open={showConfirmModal}
