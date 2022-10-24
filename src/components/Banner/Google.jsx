@@ -15,9 +15,8 @@ const Google = ({ reactGa }) => {
         trackingId:
           config.settings.DSGVOBanner.trackingId ||
           config.settings.DSGVOBanner.tracker.id,
-        gaOptions: {
-          anonymizeIp: true,
-        },
+        gaOptions: config.settings.DSGVOBanner.tracker.gaOptions || {},
+        gtagOptions: config.settings.DSGVOBanner.tracker.gtagOptions || {},
       },
     ]);
   }

@@ -19,7 +19,11 @@ export default (config) => {
   config.settings.DSGVOBanner = {
     tracker: {
       type: 'google',
-      id: 'UA-123456789-1',
+      id: 'UA-123456789-1', // G-123456789
+      gaOptions: {
+        anonymizeIp: true,
+      },
+      gtagOptions: {},
     },
     modules: ['tracking', 'youtube', 'facebook', 'google'],
     privacy_url: '/privacy',
