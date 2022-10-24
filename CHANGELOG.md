@@ -6,6 +6,7 @@
 
 ### Feature
 
+- Romanian translations @avoinea
 - Added Google support @steffenri
 
 ### Bugfix

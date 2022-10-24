@@ -10,11 +10,15 @@ const Google = ({ reactGa }) => {
   const confirmTracking = !!Number(cookies.confirm_tracking);
 
   if (__CLIENT__) {
-    reactGa.initialize(config.settings.DSGVOBanner.tracker.id, {
-      gaOptions: {
-        anonymizeIp: true,
+    reactGa.initialize(
+      config.settings.DSGVOBanner.trackingId ||
+        config.settings.DSGVOBanner.tracker.id,
+      {
+        gaOptions: {
+          anonymizeIp: true,
+        },
       },
-    });
+    );
   }
 
   useEffect(() => {

@@ -23,7 +23,7 @@ export default (config) => {
     },
     modules: ['tracking', 'youtube', 'facebook', 'google'],
     privacy_url: '/privacy',
-    ...config.settings.DSGVOBanner,
+    ...(config.settings.DSGVOBanner || {}),
   };
   config.settings.loadables['reactGa'] = loadable.lib(() => import('react-ga'));
   config.settings.loadables['matomoTracker'] = loadable.lib(() =>
