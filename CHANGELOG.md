@@ -6,6 +6,8 @@
 
 ### Feature
 
+- Added Google support @steffenri
+
 ### Bugfix
 
 ### Internal
