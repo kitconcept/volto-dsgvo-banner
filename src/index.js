@@ -21,7 +21,7 @@ export default (config) => {
       type: 'google',
       id: 'UA-123456789-1',
     },
-    modules: ['tracking', 'youtube', 'facebook'],
+    modules: ['tracking', 'youtube', 'facebook', 'google'],
     privacy_url: '/privacy',
     ...(config.settings.DSGVOBanner || {}),
   };
