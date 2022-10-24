@@ -10,20 +10,21 @@ const Google = ({ reactGa }) => {
   const confirmTracking = !!Number(cookies.confirm_tracking);
 
   if (__CLIENT__) {
-    reactGa.initialize(
-      config.settings.DSGVOBanner.trackingId ||
-        config.settings.DSGVOBanner.tracker.id,
+    reactGa.default.initialize([
       {
+        trackingId:
+          config.settings.DSGVOBanner.trackingId ||
+          config.settings.DSGVOBanner.tracker.id,
         gaOptions: {
           anonymizeIp: true,
         },
       },
-    );
+    ]);
   }
 
   useEffect(() => {
     if (confirmTracking) {
-      reactGa.pageview(location.pathname);
+      reactGa.default.send({ hitType: 'pageview', page: location.pathname });
     }
   }, [location, confirmTracking, reactGa]);
 

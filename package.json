@@ -104,7 +104,7 @@
   "dependencies": {
     "@datapunt/matomo-tracker-js": "0.5.1",
     "@plone/scripts": "*",
-    "react-ga": "3.3.0"
+    "react-ga4": "^1.4.1"
   },
   "devDependencies": {
     "release-it": "^15.4.1"
