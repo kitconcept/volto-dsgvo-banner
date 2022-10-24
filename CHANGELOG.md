@@ -2,28 +2,16 @@
 
 ## 1.1.4 (unreleased)
 
-### Breaking
-
 ### Feature
 
 - Romanian translations @avoinea
 - Added Google support @steffenri
 
-### Bugfix
-
-### Internal
-
 ## 1.1.2 (2022-09-20)
-
-### Breaking
-
-### Feature
 
 ### Bugfix
 
 - Fix cookiebanner on small devices (make it fullscreen) @steffenri
-
-### Internal
 
 ## 1.1.1 (2022-09-19)
 
