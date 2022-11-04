@@ -2,12 +2,6 @@
 
 ## 1.2.1 (unreleased)
 
-### Breaking
-
-### Feature
-
-### Bugfix
-
 ### Internal
 
 - Update @plone/scripts @davisagli
