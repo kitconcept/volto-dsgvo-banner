@@ -10,6 +10,8 @@
 
 ### Internal
 
+- Update @plone/scripts @davisagli
+
 ## 1.2.0 (2022-10-24)
 
 ### Feature

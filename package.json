@@ -103,10 +103,10 @@
   },
   "dependencies": {
     "@datapunt/matomo-tracker-js": "0.5.1",
-    "@plone/scripts": "*",
     "react-ga": "3.3.0"
   },
   "devDependencies": {
+    "@plone/scripts": "*",
     "release-it": "^15.4.1"
   }
 }
