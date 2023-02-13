@@ -8,7 +8,11 @@ import { showDSGVOBanner } from '../../actions';
 const IfConfirm = ({ children, module, showDSGVOBanner }) => {
   const [cookies] = useCookies();
 
-  if (!!Number(cookies[`confirm_${module}`])) {
+  // We bail out if module is undefined, while this is most likely
+  // a bug in the caller, there is nothing we can do here,
+  // but we want to avoid a traceback.
+  // See https://gitlab.dlr.de/internet-cms/cms-plone/dlr-internet/-/issues/1384
+  if (!module || !!Number(cookies[`confirm_${module?.cookie}`])) {
     return <>{children}</>;
   } else {
     return (
