@@ -8,6 +8,17 @@
 
 <!-- towncrier release notes start -->
 
+## 1.3.0 (2023-02-13)
+
+### Feature
+
+- Adopt the new way of developing using docker @sneridagh [#13](https://github.com/kitconcept/volto-export/pull/13)
+
+### Bugfix
+
+- Avoid error in cookie consent buttons with undefined module @reebalazs [#12](https://github.com/kitconcept/volto-export/pull/12)
+
+
 ## 1.2.1 (2022-11-04)
 
 ### Internal
