@@ -1,6 +1,6 @@
 {
   "name": "@kitconcept/volto-dsgvo-banner",
-  "version": "1.2.1",
+  "version": "1.3.0",
   "description": "volto-dsgvo-banner: Volto add-on",
   "main": "src/index.js",
   "license": "MIT",
@@ -35,23 +35,6 @@
     "url": "https://github.com/kitconcept/volto-dsgvo-banner/issues"
   },
   "homepage": "https://github.com/kitconcept/volto-dsgvo-banner#readme",
-  "release-it": {
-    "hooks": {
-      "before:bump": "yarn i18n",
-      "after:bump": "changelogupdater bump ${version}",
-      "after:release": "changelogupdater back ${version} && git commit -am 'Back to development' && git push"
-    },
-    "git": {
-      "changelog": "changelogupdater excerpt",
-      "requireUpstream": false,
-      "requireCleanWorkingDir": false
-    },
-    "github": {
-      "release": true,
-      "releaseName": "${version}",
-      "releaseNotes": "changelogupdater excerpt"
-    }
-  },
   "prettier": {
     "trailingComma": "all",
     "singleQuote": true,
