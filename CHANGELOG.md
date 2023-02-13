@@ -8,6 +8,8 @@
 
 ### Bugfix
 
+- Avoid error in cookie consent buttons with undefined module @reebalazs
+
 ### Internal
 
 ## 1.2.1 (2022-11-04)
