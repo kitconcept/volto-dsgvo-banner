@@ -1,6 +1,6 @@
 # Change Log
 
-## 1.2.1 (unreleased)
+## 1.2.2 (unreleased)
 
 ### Breaking
 
@@ -11,6 +11,12 @@
 ### Bugfix
 
 ### Internal
+
+## 1.2.1 (2022-11-04)
+
+### Internal
+
+- Update @plone/scripts @davisagli
 
 ## 1.2.0 (2022-10-24)
 
