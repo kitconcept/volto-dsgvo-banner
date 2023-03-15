@@ -10,20 +10,20 @@ const Google = ({ reactGa }) => {
   const confirmTracking = !!Number(cookies.confirm_tracking);
 
   if (__CLIENT__) {
-    reactGa.initialize(
-      config.settings.DSGVOBanner.trackingId ||
-        config.settings.DSGVOBanner.tracker.id,
+    reactGa.default.initialize([
       {
-        gaOptions: {
-          anonymizeIp: true,
-        },
+        trackingId:
+          config.settings.DSGVOBanner.trackingId ||
+          config.settings.DSGVOBanner.tracker.id,
+        gaOptions: config.settings.DSGVOBanner.tracker.gaOptions || {},
+        gtagOptions: config.settings.DSGVOBanner.tracker.gtagOptions || {},
       },
-    );
+    ]);
   }
 
   useEffect(() => {
     if (confirmTracking) {
-      reactGa.pageview(location.pathname);
+      reactGa.default.send({ hitType: 'pageview', page: location.pathname });
     }
   }, [location, confirmTracking, reactGa]);
 
