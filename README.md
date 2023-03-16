@@ -63,6 +63,15 @@ yarn start
 
 Go to http://localhost:3000, and the cooking confirmation screen will popup.
 
+## Compatibility
+
+From `2.0.0` version on, it supports Google Analytics 4 and deprecates version 3. If you are still using GA3, you should use a version of this package of the 1.x.x series.
+
+|Version   |GA version    |
+|----------|--------------|
+|>=2.0.0   |GA4           |
+|<2.0.0    |GA3           |
+
 ## Customization
 
 You can customize your Google Analytics tracking id, the url where your privacy page is located and the modules you want to enable.
