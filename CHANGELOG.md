@@ -8,6 +8,13 @@
 
 <!-- towncrier release notes start -->
 
+## 2.0.0 (2023-03-16)
+
+### Breaking
+
+- Upgrade react-ga4 in order to also support Google Analytics GA4 @avoinea [#9](https://github.com/kitconcept/volto-export/pull/9)
+
+
 ## 1.3.0 (2023-02-13)
 
 ### Feature
