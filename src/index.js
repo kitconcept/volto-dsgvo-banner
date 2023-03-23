@@ -54,6 +54,6 @@ export default (config) => {
   config.registerComponent({
     name: 'CheckPrivacyConsent',
     component: IfConfirm,
-  })
+  });
   return config;
 };
