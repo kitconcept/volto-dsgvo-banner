@@ -4,6 +4,7 @@ import DSGVOBannerEdit from './components/Block/Edit';
 import DSGVOBannerView from './components/Block/View';
 import circleMenuSVG from '@plone/volto/icons/circle-menu.svg';
 import loadable from '@loadable/component';
+import IfConfirm from './components';
 
 import './theme/main.less';
 
@@ -50,5 +51,9 @@ export default (config) => {
       view: [],
     },
   };
+  config.registerComponent({
+    name: 'CheckPrivacyConsent',
+    component: IfConfirm,
+  })
   return config;
 };
