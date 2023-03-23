@@ -1,0 +1,1 @@
+Make IfConfirm component available in registry @danlavrz
