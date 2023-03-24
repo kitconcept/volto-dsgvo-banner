@@ -1,10 +1,10 @@
 import { Banner } from './components';
+import { IfConfirm } from './components';
 import { DSGVOBanner } from './reducers';
 import DSGVOBannerEdit from './components/Block/Edit';
 import DSGVOBannerView from './components/Block/View';
 import circleMenuSVG from '@plone/volto/icons/circle-menu.svg';
 import loadable from '@loadable/component';
-import IfConfirm from './components';
 
 import './theme/main.less';
 
