@@ -8,6 +8,13 @@
 
 <!-- towncrier release notes start -->
 
+## 2.1.0 (2023-04-03)
+
+### Feature
+
+- Make IfConfirm component available in registry @danlavrz [#14](https://github.com/kitconcept/volto-export/pull/14)
+
+
 ## 2.0.0 (2023-03-16)
 
 ### Breaking
