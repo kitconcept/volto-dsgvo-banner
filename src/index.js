@@ -1,4 +1,5 @@
 import { Banner } from './components';
+import { IfConfirm } from './components';
 import { DSGVOBanner } from './reducers';
 import DSGVOBannerEdit from './components/Block/Edit';
 import DSGVOBannerView from './components/Block/View';
@@ -50,5 +51,9 @@ export default (config) => {
       view: [],
     },
   };
+  config.registerComponent({
+    name: 'CheckPrivacyConsent',
+    component: IfConfirm,
+  });
   return config;
 };
