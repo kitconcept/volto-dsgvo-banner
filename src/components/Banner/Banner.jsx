@@ -46,6 +46,12 @@ const Banner = (props) => {
   const [confirmGoogle, setConfirmGoogle] = useState(
     !!Number(cookies.confirm_google),
   );
+  const [confirmTwitter, setConfirmTwitter] = useState(
+    !!Number(cookies.confirm_twitter),
+  );
+  const [confirmInstagram, setConfirmInstagram] = useState(
+    !!Number(cookies.confirm_instagram),
+  );
 
   const expiryDate = new Date();
   expiryDate.setMonth(expiryDate.getMonth() + 1);
@@ -83,6 +89,18 @@ const Banner = (props) => {
       removeCookie('confirm_google', options);
     }
 
+    if (confirmTwitter) {
+      setCookie('confirm_twitter', 1, options);
+    } else {
+      removeCookie('confirm_twitter', options);
+    }
+
+    if (confirmInstagram) {
+      setCookie('confirm_instagram', 1, options);
+    } else {
+      removeCookie('confirm_instagram', options);
+    }
+
     setCookie('confirm_cookies', 1, options);
     props.hideDSGVOBanner();
   };
@@ -94,6 +112,8 @@ const Banner = (props) => {
     setCookie('confirm_facebook', 1, options);
     setCookie('confirm_youtube', 1, options);
     setCookie('confirm_google', 1, options);
+    setCookie('confirm_twitter', 1, options);
+    setCookie('confirm_instagram', 1, options);
     setCookie('confirm_cookies', 1, options);
 
     props.hideDSGVOBanner();
@@ -244,6 +264,26 @@ const Banner = (props) => {
                       label="Google"
                       onChange={() => setConfirmGoogle(!confirmGoogle)}
                       checked={confirmGoogle}
+                    />
+                  </Form.Field>
+                )}
+                {includes(modules, 'twitter') && (
+                  <Form.Field>
+                    <Checkbox
+                      toggle
+                      label="Twitter"
+                      onChange={() => setConfirmTwitter(!confirmTwitter)}
+                      checked={confirmTwitter}
+                    />
+                  </Form.Field>
+                )}
+                {includes(modules, 'instagram') && (
+                  <Form.Field>
+                    <Checkbox
+                      toggle
+                      label="Instagram"
+                      onChange={() => setConfirmInstagram(!confirmInstagram)}
+                      checked={confirmInstagram}
                     />
                   </Form.Field>
                 )}
