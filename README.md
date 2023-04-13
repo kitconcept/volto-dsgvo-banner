@@ -100,6 +100,18 @@ config.settings.DSGVOBanner = {
 };
 ```
 
+If you want to add optional modules which are not enabled by default:
+
+```
+config.settings.DSGVOBanner = {
+  ...(config.settings.DSGVOBanner || {}),
+  modules = [
+    ...config.settings.DSGVOBanner.modules,
+    'twitter',
+    'instagram',
+  ];
+```
+
 # License
 
 The project is licensed under the MIT license.

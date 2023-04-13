@@ -112,8 +112,6 @@ const Banner = (props) => {
     setCookie('confirm_facebook', 1, options);
     setCookie('confirm_youtube', 1, options);
     setCookie('confirm_google', 1, options);
-    setCookie('confirm_twitter', 1, options);
-    setCookie('confirm_instagram', 1, options);
     setCookie('confirm_cookies', 1, options);
 
     props.hideDSGVOBanner();
