@@ -109,9 +109,7 @@ const Banner = (props) => {
     setCookie('confirm_tracking', 1, options);
     window[`ga-disable-${config.settings.DSGVOBanner.trackingId}`] = false;
 
-    setCookie('confirm_facebook', 1, options);
-    setCookie('confirm_youtube', 1, options);
-    setCookie('confirm_google', 1, options);
+    modules.forEach((module) => setCookie(`confirm_${module}`, 1, options));
     setCookie('confirm_cookies', 1, options);
 
     props.hideDSGVOBanner();
