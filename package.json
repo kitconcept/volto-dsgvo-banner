@@ -89,7 +89,7 @@
     "react-ga4": "^2.1.0"
   },
   "devDependencies": {
-    "@plone/scripts": "^2.3.0",
-    "release-it": "^15.4.1"
+    "@plone/scripts": "^3.0.0",
+    "release-it": "^16.1.3"
   }
 }
