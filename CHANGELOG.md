@@ -8,6 +8,18 @@
 
 <!-- towncrier release notes start -->
 
+## 2.2.0 (2023-07-26)
+
+### Feature
+
+- Add Spanish translations @macagua [#17](https://github.com/kitconcept/volto-dsgvo-block/pull/17)
+- Updated docker env @sneridagh [#20](https://github.com/kitconcept/volto-dsgvo-block/pull/20)
+
+### Bugfix
+
+- Change ifconfirm component for compatibility with volto-light-theme @iFlameing [#19](https://github.com/kitconcept/volto-dsgvo-block/pull/19)
+
+
 ## 2.1.0 (2023-04-03)
 
 ### Feature
