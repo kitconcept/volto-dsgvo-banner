@@ -4,7 +4,7 @@
 #     https://tech.davis-hansson.com/p/make/
 SHELL:=bash
 .ONESHELL:
-.SHELLFLAGS:=-xeu -o pipefail -O inherit_errexit -c
+.SHELLFLAGS:=-eu -o pipefail -c
 .SILENT:
 .DELETE_ON_ERROR:
 MAKEFLAGS+=--warn-undefined-variables
@@ -22,40 +22,47 @@ RESET=`tput sgr0`
 YELLOW=`tput setaf 3`
 
 PLONE_VERSION=6
-VOLTO_VERSION=16.10.0
+VOLTO_VERSION=16.22.0
 
-ADDON_NAME='@kitconcept/volto-dsgvo-banner'
-ADDON_PATH='volto-dsgvo-banner'
-DEV_COMPOSE=dockerfiles/docker-compose.yml
+ADDON_NAME='@kitconcept/volto-dsgvo-block'
+ADDON_PATH='volto-dsgvo-block'
+COMPOSE_FILE=dockerfiles/docker-compose.yml
 ACCEPTANCE_COMPOSE=acceptance/docker-compose.yml
 CMD=CURRENT_DIR=${CURRENT_DIR} ADDON_NAME=${ADDON_NAME} ADDON_PATH=${ADDON_PATH} VOLTO_VERSION=${VOLTO_VERSION} PLONE_VERSION=${PLONE_VERSION} docker compose
-DOCKER_COMPOSE=${CMD} -p ${ADDON_PATH} -f ${DEV_COMPOSE}
+DOCKER_COMPOSE=${CMD} -p ${ADDON_PATH} -f ${COMPOSE_FILE}
+DEV_COMPOSE=COMPOSE_PROFILES=dev ${DOCKER_COMPOSE}
+LIVE_COMPOSE=COMPOSE_PROFILES=dev ${DOCKER_COMPOSE}
 ACCEPTANCE=${CMD} -p ${ADDON_PATH}-acceptance -f ${ACCEPTANCE_COMPOSE}
 
 .PHONY: build-backend
 build-backend: ## Build
 	@echo "$(GREEN)==> Build Backend Container $(RESET)"
-	${DOCKER_COMPOSE} build backend
+	${DEV_COMPOSE} build backend
 
 .PHONY: start-backend
 start-backend: ## Starts Docker backend
 	@echo "$(GREEN)==> Start Docker-based Plone Backend $(RESET)"
-	${DOCKER_COMPOSE} up backend -d
+	${DEV_COMPOSE} up backend -d
 
 .PHONY: stop-backend
 stop-backend: ## Stop Docker backend
 	@echo "$(GREEN)==> Stop Docker-based Plone Backend $(RESET)"
-	${DOCKER_COMPOSE} stop backend
+	${DEV_COMPOSE} stop backend
+
+.PHONY: build-live
+build-live: ## Build Addon live
+	@echo "$(GREEN)==> Build Addon development container $(RESET)"
+	${LIVE_COMPOSE} build addon-live
 
 .PHONY: build-addon
 build-addon: ## Build Addon dev
 	@echo "$(GREEN)==> Build Addon development container $(RESET)"
-	${DOCKER_COMPOSE} build addon-dev
+	${DEV_COMPOSE} build addon-dev
 
 .PHONY: start-dev
 start-dev: ## Starts Dev container
 	@echo "$(GREEN)==> Start Addon Development container $(RESET)"
-	${DOCKER_COMPOSE} up addon-dev
+	${DEV_COMPOSE} up addon-dev
 
 .PHONY: dev
 dev: ## Develop the addon
@@ -72,44 +79,44 @@ help:		## Show this help.
 # Dev Helpers
 .PHONY: i18n
 i18n: ## Sync i18n
-	${DOCKER_COMPOSE} run addon-dev i18n
+	${DEV_COMPOSE} run addon-dev i18n
 
 .PHONY: format
 format: ## Format codebase
-	${DOCKER_COMPOSE} run addon-dev lint:fix
-	${DOCKER_COMPOSE} run addon-dev prettier:fix
-	${DOCKER_COMPOSE} run addon-dev stylelint:fix
+	${DEV_COMPOSE} run addon-dev lint:fix
+	${DEV_COMPOSE} run addon-dev prettier:fix
+	${DEV_COMPOSE} run addon-dev stylelint:fix
 
 .PHONY: lint
 lint: ## Lint Codebase
-	${DOCKER_COMPOSE} run addon-dev lint
-	${DOCKER_COMPOSE} run addon-dev prettier
-	${DOCKER_COMPOSE} run addon-dev stylelint
+	${DEV_COMPOSE} run addon-dev lint
+	${DEV_COMPOSE} run addon-dev prettier
+	${DEV_COMPOSE} run addon-dev stylelint --allow-empty-input
 
 .PHONY: test
 test: ## Run unit tests
-	${DOCKER_COMPOSE} run addon-dev test --watchAll
+	${DEV_COMPOSE} run addon-dev test --watchAll
 
 .PHONY: test-ci
 test-ci: ## Run unit tests in CI
-	${DOCKER_COMPOSE} run -e CI=1 addon-dev test
+	${DEV_COMPOSE} run -e CI=1 addon-dev test
 
 ## Acceptance
 .PHONY: install-acceptance
-install-acceptance: ## Install Cypress, build containers
+install-acceptance: ## Install Cypress, build acceptance containers
 	(cd acceptance && yarn)
 	${ACCEPTANCE} --profile dev --profile prod build
 
 .PHONY: start-test-acceptance-server
-start-test-acceptance-server: ## Start acceptance server
-	${ACCEPTANCE} --profile dev up -d
+start-test-acceptance-server: ## Start acceptance server (for use it in while developing)
+	${ACCEPTANCE} --profile dev up
 
 .PHONY: start-test-acceptance-server-prod
-start-test-acceptance-server-prod: ## Start acceptance server
+start-test-acceptance-server-prod: ## Start acceptance server in prod (used by CI)
 	${ACCEPTANCE} --profile prod up -d
 
 .PHONY: test-acceptance
-test-acceptance: ## Start Cypress
+test-acceptance: ## Start Cypress (for use it while developing)
 	(cd acceptance && ./node_modules/.bin/cypress open)
 
 .PHONY: test-acceptance-headless
@@ -117,9 +124,21 @@ test-acceptance-headless: ## Run cypress tests in CI
 	(cd acceptance && ./node_modules/.bin/cypress run)
 
 .PHONY: stop-test-acceptance-server
-stop-test-acceptance-server: ## Stop acceptance server
-	${ACCEPTANCE} down
+stop-test-acceptance-server: ## Stop acceptance server (for use it while finished developing)
+	${ACCEPTANCE} --profile dev down
 
 .PHONY: status-test-acceptance-server
-status-test-acceptance-server: ## Status of Acceptance Server
+status-test-acceptance-server: ## Status of Acceptance Server (for use it while developing)
 	${ACCEPTANCE} ps
+
+.PHONY: debug-frontend
+debug-frontend:  ## Run bash in the Frontend container (for debug infrastructure purposes)
+	${DEV_COMPOSE} run --entrypoint bash addon-dev
+
+.PHONY: release
+release:  ## Release a version of the add-on
+	yarn release
+
+.PHONY: release-rc
+release-rc:  ## Release a RC version of the add-on
+	npx release-it --preRelease=rc
