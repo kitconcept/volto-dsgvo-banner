@@ -33,6 +33,12 @@ const View = (props) => {
   const [confirmGoogle, setConfirmGoogle] = useState(
     !!Number(cookies.confirm_google),
   );
+  const [confirmVimeo, setConfirmVimeo] = useState(
+    !!Number(cookies.confirm_vimeo),
+  );
+  const [confirmTwitter, setConfirmTwitter] = useState(
+    !!Number(cookies.confirm_twitter),
+  );
 
   const expiryDate = new Date();
   expiryDate.setMonth(expiryDate.getMonth() + 1);
@@ -70,9 +76,27 @@ const View = (props) => {
       removeCookie('confirm_google', options);
     }
 
+    if (confirmVimeo) {
+      setCookie('confirm_vimeo', 1, options);
+    } else {
+      removeCookie('confirm_vimeo', 1, options);
+    }
+
+    if (confirmTwitter) {
+      setCookie('confirm_twitter', 1, options);
+    } else {
+      removeCookie('confirm_twitter', 1, options);
+    }
+
     setCookie('confirm_cookies', 1, options);
     props.hideDSGVOBanner();
   };
+
+  //Save the selection on every switch in the settings
+  useEffect(() => {
+    confirmSelection();
+    // eslint-disable-next-line react-hooks/exhaustive-deps
+  }, [confirmYoutube, confirmVimeo, confirmTwitter]);
 
   return (
     <>
@@ -122,6 +146,26 @@ const View = (props) => {
               label="Google"
               onChange={() => setConfirmGoogle(!confirmGoogle)}
               checked={confirmGoogle}
+            />
+          </Form.Field>
+        )}
+        {includes(modules, 'vimeo') && (
+          <Form.Field>
+            <Checkbox
+              toggle
+              label="Vimeo"
+              onChange={() => setConfirmVimeo(!confirmVimeo)}
+              checked={confirmVimeo}
+            />
+          </Form.Field>
+        )}
+        {includes(modules, 'twitter') && (
+          <Form.Field>
+            <Checkbox
+              toggle
+              label="Twitter"
+              onChange={() => setConfirmTwitter(!confirmTwitter)}
+              checked={confirmTwitter}
             />
           </Form.Field>
         )}
