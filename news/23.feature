@@ -1,0 +1,1 @@
+Added Differentiation between Youtube and Vimeo Videos in the Video-View, and added Twitter Module and Cookie Option if someone uses volto-social-blocks with this Addon @Molochem 
