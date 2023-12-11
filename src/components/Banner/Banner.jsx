@@ -28,7 +28,11 @@ const Banner = (props) => {
   const modules = config.settings.DSGVOBanner.modules;
   const [cookies, setCookie, removeCookie] = useCookies();
   const [configureCookies, setConfigureCookies] = useState(false);
-  const showConfirmModal = !Number(cookies.confirm_cookies) || props.show;
+  const useAnyTracking = config.settings.DSGCOBanner.useAnyTracking;
+  const showConfirmModal = config.settings.DSGVOBanner.useBanner
+    ? !Number(cookies.confirm_cookies) || props.show
+    : props.show;
+
   const intl = useIntl();
 
   if (isObject(privacy_url)) {
@@ -37,6 +41,7 @@ const Banner = (props) => {
   const [confirmTracking, setConfirmTracking] = useState(
     !!Number(cookies.confirm_tracking),
   );
+
   const [confirmYoutube, setConfirmYoutube] = useState(
     !!Number(cookies.confirm_youtube),
   );
@@ -60,15 +65,17 @@ const Banner = (props) => {
   const confirmSelection = () => {
     let expiryDate = new Date();
     expiryDate.setMonth(expiryDate.getMonth() + 1);
-    if (confirmTracking) {
-      setCookie('confirm_tracking', 1, options);
-      window[`ga-disable-${config.settings.DSGVOBanner.trackingId}`] = false;
-    } else {
-      removeCookie('confirm_tracking', options);
-      window[`ga-disable-${config.settings.DSGVOBanner.trackingId}`] = true;
-      removeCookie('_ga', options);
-      removeCookie('_gat', options);
-      removeCookie('_gid', options);
+    if (useAnyTracking) {
+      if (confirmTracking) {
+        setCookie('confirm_tracking', 1, options);
+        window[`ga-disable-${config.settings.DSGVOBanner.trackingId}`] = false;
+      } else {
+        removeCookie('confirm_tracking', options);
+        window[`ga-disable-${config.settings.DSGVOBanner.trackingId}`] = true;
+        removeCookie('_ga', options);
+        removeCookie('_gat', options);
+        removeCookie('_gid', options);
+      }
     }
 
     if (confirmFacebook) {
@@ -216,15 +223,17 @@ const Banner = (props) => {
                 />
               </h2>
               <Form>
-                <Form.Field>
-                  <Checkbox
-                    toggle
-                    label={intl.formatMessage(messages.technically_required)}
-                    checked
-                    disabled
-                  />
-                </Form.Field>
-                {includes(modules, 'tracking') && (
+                {useAnyTracking && (
+                  <Form.Field>
+                    <Checkbox
+                      toggle
+                      label={intl.formatMessage(messages.technically_required)}
+                      checked
+                      disabled
+                    />
+                  </Form.Field>
+                )}
+                {useAnyTracking && includes(modules, 'tracking') && (
                   <Form.Field>
                     <Checkbox
                       toggle

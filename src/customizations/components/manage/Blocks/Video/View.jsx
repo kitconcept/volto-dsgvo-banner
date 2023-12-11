@@ -9,7 +9,7 @@ import { Embed } from 'semantic-ui-react';
 import cx from 'classnames';
 import { isInternalURL, flattenToAppURL } from '@plone/volto/helpers';
 
-import { default as IfConfirm } from '@kitconcept/volto-dsgvo-banner/components/IfConfirm/IfConfirm';
+import { IfConfirm } from '@kitconcept/volto-dsgvo-banner/components/IfConfirm/IfConfirm';
 
 /**
  * View video block class.

@@ -26,7 +26,9 @@ export default (config) => {
       },
       gtagOptions: {},
     },
-    modules: ['tracking', 'youtube', 'facebook', 'google'],
+    modules: ['tracking', 'youtube', 'facebook', 'google', 'twitter', 'vimeo'],
+    useBanner: true,
+    useAnyTracking: true,
     privacy_url: '/privacy',
     ...(config.settings.DSGVOBanner || {}),
   };
