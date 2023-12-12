@@ -33,7 +33,9 @@ const Banner = (props) => {
     config.settings.DSGVOBanner.bannerAgreeButtonColor;
   const bannerAdjustButtonColor =
     config.settings.DSGVOBanner.bannerAdjustButtonColor;
-  const showConfirmModal = !Number(cookies.confirm_cookies) || props.show;
+  const showConfirmModal = config.settings.DSGVOBanner.useBanner
+    ? !Number(cookies.confirm_cookies) || props.show
+    : props.show;
 
   const intl = useIntl();
 

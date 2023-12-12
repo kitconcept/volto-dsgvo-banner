@@ -27,7 +27,7 @@ export default (config) => {
       gtagOptions: {},
     },
     modules: ['tracking', 'youtube', 'facebook', 'google', 'twitter', 'vimeo'],
-    useBanner: true,
+    useBanner: false,
     showTechRequired: true,
     bannerAgreeButtonColor: "branded olive",
     bannerAdjustButtonColor: "branded blue",

@@ -1,0 +1,1 @@
+Added : Interchangeable Button Colors, The Option to Hide the Banner on First Connect
