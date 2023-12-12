@@ -28,7 +28,9 @@ export default (config) => {
     },
     modules: ['tracking', 'youtube', 'facebook', 'google', 'twitter', 'vimeo'],
     useBanner: true,
-    useAnyTracking: true,
+    showTechRequired: true,
+    bannerAgreeButtonColor: "branded olive",
+    bannerAdjustButtonColor: "branded blue",
     privacy_url: '/privacy',
     ...(config.settings.DSGVOBanner || {}),
   };

@@ -61,7 +61,7 @@ Start Volto with:
 yarn start
 ```
 
-Go to http://localhost:3000, and the cooking confirmation screen will popup.
+Go to http://localhost:3000, and the cookie confirmation screen will popup.
 
 ## Compatibility
 
@@ -99,6 +99,46 @@ config.settings.DSGVOBanner = {
   privacy_url: '/privacy',
 };
 ```
+You can customize the Style of the Modal Buttons
+```
+config.settings.DSGVOBanner = {
+  bannerAgreeButtonColor: "branded olive",
+  bannerAdjustButtonColor: "branded blue",
+  ...(config.settings.DSGVOBanner || {}),
+}
+```
+Or something like  
+```
+config.settings.DSGVOBanner = {
+  bannerAgreeButtonColor: "red",
+  bannerAdjustButtonColor: "pink",
+  ...(config.settings.DSGVOBanner || {}),
+}
+```
+Keep in mind though, that the 'Adjust privacy Setting' Button will always stay inverted
+
+You can also configure the Banner to not show the first time a User connects to your Site, and only use the Cookie Block and the Disclaimer of the respective Blocks
+```
+config.settings.DSGVOBanner = {
+  useBanner: false,
+  ...(config.settings.DSGVOBanner || {}),
+}
+```
+You can also hide the greyed-out 'Technically required' Slider
+```
+config.settings.DSGVOBanner = {
+  showTechRequired: false,
+  ...(config.settings.DSGVOBanner || {}),
+}
+```
+
+# Supported Modules
+- 'tracking'
+- 'youtube'
+- 'facebook'
+- 'google'
+- 'twitter'
+- 'vimeo'
 
 # License
 

@@ -28,10 +28,12 @@ const Banner = (props) => {
   const modules = config.settings.DSGVOBanner.modules;
   const [cookies, setCookie, removeCookie] = useCookies();
   const [configureCookies, setConfigureCookies] = useState(false);
-  const useAnyTracking = config.settings.DSGCOBanner.useAnyTracking;
-  const showConfirmModal = config.settings.DSGVOBanner.useBanner
-    ? !Number(cookies.confirm_cookies) || props.show
-    : props.show;
+  const showTechRequired = config.settings.DSGVOBanner.showTechRequired;
+  const bannerAgreeButtonColor =
+    config.settings.DSGVOBanner.bannerAgreeButtonColor;
+  const bannerAdjustButtonColor =
+    config.settings.DSGVOBanner.bannerAdjustButtonColor;
+  const showConfirmModal = !Number(cookies.confirm_cookies) || props.show;
 
   const intl = useIntl();
 
@@ -65,17 +67,16 @@ const Banner = (props) => {
   const confirmSelection = () => {
     let expiryDate = new Date();
     expiryDate.setMonth(expiryDate.getMonth() + 1);
-    if (useAnyTracking) {
-      if (confirmTracking) {
-        setCookie('confirm_tracking', 1, options);
-        window[`ga-disable-${config.settings.DSGVOBanner.trackingId}`] = false;
-      } else {
-        removeCookie('confirm_tracking', options);
-        window[`ga-disable-${config.settings.DSGVOBanner.trackingId}`] = true;
-        removeCookie('_ga', options);
-        removeCookie('_gat', options);
-        removeCookie('_gid', options);
-      }
+
+    if (confirmTracking) {
+      setCookie('confirm_tracking', 1, options);
+      window[`ga-disable-${config.settings.DSGVOBanner.trackingId}`] = false;
+    } else {
+      removeCookie('confirm_tracking', options);
+      window[`ga-disable-${config.settings.DSGVOBanner.trackingId}`] = true;
+      removeCookie('_ga', options);
+      removeCookie('_gat', options);
+      removeCookie('_gid', options);
     }
 
     if (confirmFacebook) {
@@ -114,12 +115,13 @@ const Banner = (props) => {
   const confirmAll = () => {
     setCookie('confirm_tracking', 1, options);
     window[`ga-disable-${config.settings.DSGVOBanner.trackingId}`] = false;
-
     setCookie('confirm_facebook', 1, options);
     setCookie('confirm_youtube', 1, options);
     setCookie('confirm_google', 1, options);
-    setCookie('confirm_cookies', 1, options);
+    setCookie('confirm_twitter', 1, options);
+    setCookie('confirm_vimeo', 1, options);
 
+    setCookie('confirm_cookies', 1, options);
     props.hideDSGVOBanner();
   };
 
@@ -193,7 +195,10 @@ const Banner = (props) => {
               </p>
             </Modal.Content>
             <Modal.Actions>
-              <Button className="branded olive" onClick={() => confirmAll()}>
+              <Button
+                className={bannerAgreeButtonColor}
+                onClick={() => confirmAll()}
+              >
                 <FormattedMessage
                   id="Agree to all cookies"
                   defaultMessage="Agree to all cookies"
@@ -201,8 +206,7 @@ const Banner = (props) => {
               </Button>
               {modules.length > 0 && (
                 <Button
-                  className="branded blue inverted"
-                  branded
+                  className={bannerAdjustButtonColor + ' inverted'}
                   onClick={() => setConfigureCookies(true)}
                 >
                   <FormattedMessage
@@ -223,7 +227,7 @@ const Banner = (props) => {
                 />
               </h2>
               <Form>
-                {useAnyTracking && (
+                {showTechRequired && (
                   <Form.Field>
                     <Checkbox
                       toggle
@@ -233,7 +237,7 @@ const Banner = (props) => {
                     />
                   </Form.Field>
                 )}
-                {useAnyTracking && includes(modules, 'tracking') && (
+                {includes(modules, 'tracking') && (
                   <Form.Field>
                     <Checkbox
                       toggle
@@ -303,16 +307,18 @@ const Banner = (props) => {
                 {'< '}
                 <FormattedMessage id="Back" defaultMessage="Back" />
               </Button>
-              <Button className="branded olive" onClick={() => confirmAll()}>
+              <Button
+                className={bannerAgreeButtonColor}
+                onClick={() => confirmAll()}
+              >
                 <FormattedMessage
                   id="Agree to all cookies"
                   defaultMessage="Agree to all cookies"
                 />
               </Button>
               <Button
-                className="branded blue"
-                branded
-                onClick={confirmSelection}
+                className={bannerAdjustButtonColor}
+                onClick={() => confirmSelection()}
               >
                 <FormattedMessage id="Save" defaultMessage="Save" />
               </Button>

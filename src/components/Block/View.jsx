@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import { includes } from 'lodash';
 import { Checkbox, Form } from 'semantic-ui-react';
 import { useCookies } from 'react-cookie';
@@ -18,6 +18,9 @@ const messages = defineMessages({
 
 const View = (props) => {
   const modules = config.settings.DSGVOBanner.modules;
+  const showTechRequired = config.settings.DSGVOBanner.showTechRequired;
+  const bannerAdjustButtonColor =
+    config.settings.DSGVOBanner.bannerAdjustButtonColor;
   const [cookies, setCookie, removeCookie] = useCookies();
   const intl = useIntl();
 
@@ -47,6 +50,7 @@ const View = (props) => {
   const confirmSelection = () => {
     let expiryDate = new Date();
     expiryDate.setMonth(expiryDate.getMonth() + 1);
+
     if (confirmTracking) {
       setCookie('confirm_tracking', 1, options);
       window[`ga-disable-${config.settings.DSGVOBanner.trackingId}`] = false;
@@ -89,7 +93,6 @@ const View = (props) => {
     }
 
     setCookie('confirm_cookies', 1, options);
-    props.hideDSGVOBanner();
   };
 
   //Save the selection on every switch in the settings
@@ -101,14 +104,16 @@ const View = (props) => {
   return (
     <>
       <Form>
-        <Form.Field>
-          <Checkbox
-            toggle
-            label={intl.formatMessage(messages.technically_required)}
-            checked
-            disabled
-          />
-        </Form.Field>
+        {showTechRequired && (
+          <Form.Field>
+            <Checkbox
+              toggle
+              label={intl.formatMessage(messages.technically_required)}
+              checked
+              disabled
+            />
+          </Form.Field>
+        )}
         {includes(modules, 'tracking') && (
           <Form.Field>
             <Checkbox
@@ -170,9 +175,8 @@ const View = (props) => {
           </Form.Field>
         )}
         <Form.Button
-          className="branded blue"
-          branded
-          onClick={confirmSelection}
+          className={bannerAdjustButtonColor}
+          onClick={() => confirmSelection()}
         >
           <FormattedMessage id="Save" defaultMessage="Save" />
         </Form.Button>
