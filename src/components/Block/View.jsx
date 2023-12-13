@@ -99,7 +99,14 @@ const View = (props) => {
   useEffect(() => {
     confirmSelection();
     // eslint-disable-next-line react-hooks/exhaustive-deps
-  }, [confirmYoutube, confirmVimeo, confirmTwitter]);
+  }, [
+    confirmYoutube,
+    confirmVimeo,
+    confirmTwitter,
+    confirmFacebook,
+    confirmGoogle,
+    confirmTracking,
+  ]);
 
   return (
     <>
