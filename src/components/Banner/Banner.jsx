@@ -28,12 +28,13 @@ const Banner = (props) => {
   const modules = config.settings.DSGVOBanner.modules;
   const [cookies, setCookie, removeCookie] = useCookies();
   const [configureCookies, setConfigureCookies] = useState(false);
-  const showTechRequired = config.settings.DSGVOBanner.showTechRequired;
-  const bannerAgreeButtonColor =
-    config.settings.DSGVOBanner.bannerAgreeButtonColor;
-  const bannerAdjustButtonColor =
-    config.settings.DSGVOBanner.bannerAdjustButtonColor;
-  const showConfirmModal = config.settings.DSGVOBanner.useBanner
+  const showTechnicallyRequired =
+    config.settings.DSGVOBanner.showTechnicallyRequired;
+  const bannerAgreeButtonCss =
+    config.settings.DSGVOBanner.cssClasses.bannerAgreeButtonCss;
+  const bannerAdjustButtonCss =
+    config.settings.DSGVOBanner.cssClasses.bannerAdjustButtonCss;
+  const showConfirmModal = config.settings.DSGVOBanner.showBanner
     ? !Number(cookies.confirm_cookies) || props.show
     : props.show;
 
@@ -198,7 +199,7 @@ const Banner = (props) => {
             </Modal.Content>
             <Modal.Actions>
               <Button
-                className={bannerAgreeButtonColor}
+                className={bannerAgreeButtonCss}
                 onClick={() => confirmAll()}
               >
                 <FormattedMessage
@@ -208,7 +209,7 @@ const Banner = (props) => {
               </Button>
               {modules.length > 0 && (
                 <Button
-                  className={bannerAdjustButtonColor + ' inverted'}
+                  className={bannerAdjustButtonCss + ' inverted'}
                   onClick={() => setConfigureCookies(true)}
                 >
                   <FormattedMessage
@@ -229,7 +230,7 @@ const Banner = (props) => {
                 />
               </h2>
               <Form>
-                {showTechRequired && (
+                {showTechnicallyRequired && (
                   <Form.Field>
                     <Checkbox
                       toggle
@@ -310,7 +311,7 @@ const Banner = (props) => {
                 <FormattedMessage id="Back" defaultMessage="Back" />
               </Button>
               <Button
-                className={bannerAgreeButtonColor}
+                className={bannerAgreeButtonCss}
                 onClick={() => confirmAll()}
               >
                 <FormattedMessage
@@ -319,7 +320,7 @@ const Banner = (props) => {
                 />
               </Button>
               <Button
-                className={bannerAdjustButtonColor}
+                className={bannerAdjustButtonCss}
                 onClick={() => confirmSelection()}
               >
                 <FormattedMessage id="Save" defaultMessage="Save" />

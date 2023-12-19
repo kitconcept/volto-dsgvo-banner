@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import { includes } from 'lodash';
-import { Checkbox, Form } from 'semantic-ui-react';
+import { Checkbox, Form, Button } from 'semantic-ui-react';
 import { useCookies } from 'react-cookie';
 import config from '@plone/volto/registry';
 import { useIntl, defineMessages, FormattedMessage } from 'react-intl';
@@ -18,9 +18,10 @@ const messages = defineMessages({
 
 const View = (props) => {
   const modules = config.settings.DSGVOBanner.modules;
-  const showTechRequired = config.settings.DSGVOBanner.showTechRequired;
-  const bannerAdjustButtonColor =
-    config.settings.DSGVOBanner.bannerAdjustButtonColor;
+  const showTechnicallyRequired =
+    config.settings.DSGVOBanner.showTechnicallyRequired;
+  const bannerAgreeButtonCss =
+    config.settings.DSGVOBanner.cssClasses.bannerAgreeButtonCss;
   const [cookies, setCookie, removeCookie] = useCookies();
   const intl = useIntl();
 
@@ -111,7 +112,7 @@ const View = (props) => {
   return (
     <>
       <Form>
-        {showTechRequired && (
+        {showTechnicallyRequired && (
           <Form.Field>
             <Checkbox
               toggle
@@ -181,12 +182,12 @@ const View = (props) => {
             />
           </Form.Field>
         )}
-        <Form.Button
-          className={bannerAdjustButtonColor}
+        <Button
+          className={bannerAgreeButtonCss}
           onClick={() => confirmSelection()}
         >
           <FormattedMessage id="Save" defaultMessage="Save" />
-        </Form.Button>
+        </Button>
       </Form>
     </>
   );

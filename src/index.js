@@ -27,10 +27,12 @@ export default (config) => {
       gtagOptions: {},
     },
     modules: ['tracking', 'youtube', 'facebook', 'google', 'twitter', 'vimeo'],
-    useBanner: true,
-    showTechRequired: true,
-    bannerAgreeButtonColor: "branded olive",
-    bannerAdjustButtonColor: "branded blue",
+    showBanner: true,
+    showTechnicallyRequired: true,
+    cssClasses : {
+    bannerAgreeButtonCss: "branded red",
+    bannerAdjustButtonCss: "branded blue",
+    },
     privacy_url: '/privacy',
     ...(config.settings.DSGVOBanner || {}),
   };
