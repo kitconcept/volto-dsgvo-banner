@@ -20,8 +20,8 @@ const View = (props) => {
   const modules = config.settings.DSGVOBanner.modules;
   const showTechnicallyRequired =
     config.settings.DSGVOBanner.showTechnicallyRequired;
-  const bannerAgreeButtonCss =
-    config.settings.DSGVOBanner.cssClasses.bannerAgreeButtonCss;
+  const bannerAgreeButton =
+    config.settings.DSGVOBanner.cssClasses.bannerAgreeButton;
   const [cookies, setCookie, removeCookie] = useCookies();
   const intl = useIntl();
 
@@ -183,7 +183,7 @@ const View = (props) => {
           </Form.Field>
         )}
         <Button
-          className={bannerAgreeButtonCss}
+          className={bannerAgreeButton}
           onClick={() => confirmSelection()}
         >
           <FormattedMessage id="Save" defaultMessage="Save" />

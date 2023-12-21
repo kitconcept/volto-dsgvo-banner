@@ -30,8 +30,8 @@ export default (config) => {
     showBanner: true,
     showTechnicallyRequired: true,
     cssClasses : {
-    bannerAgreeButtonCss: "branded red",
-    bannerAdjustButtonCss: "branded blue",
+    bannerAgreeButton: "branded olive",
+    bannerAdjustButton: "branded blue",
     },
     privacy_url: '/privacy',
     ...(config.settings.DSGVOBanner || {}),

@@ -30,10 +30,10 @@ const Banner = (props) => {
   const [configureCookies, setConfigureCookies] = useState(false);
   const showTechnicallyRequired =
     config.settings.DSGVOBanner.showTechnicallyRequired;
-  const bannerAgreeButtonCss =
-    config.settings.DSGVOBanner.cssClasses.bannerAgreeButtonCss;
-  const bannerAdjustButtonCss =
-    config.settings.DSGVOBanner.cssClasses.bannerAdjustButtonCss;
+  const bannerAgreeButton =
+    config.settings.DSGVOBanner.cssClasses.bannerAgreeButton;
+  const bannerAdjustButton =
+    config.settings.DSGVOBanner.cssClasses.bannerAdjustButton;
   const showConfirmModal = config.settings.DSGVOBanner.showBanner
     ? !Number(cookies.confirm_cookies) || props.show
     : props.show;
@@ -199,7 +199,7 @@ const Banner = (props) => {
             </Modal.Content>
             <Modal.Actions>
               <Button
-                className={bannerAgreeButtonCss}
+                className={bannerAgreeButton}
                 onClick={() => confirmAll()}
               >
                 <FormattedMessage
@@ -209,7 +209,7 @@ const Banner = (props) => {
               </Button>
               {modules.length > 0 && (
                 <Button
-                  className={bannerAdjustButtonCss + ' inverted'}
+                  className={bannerAdjustButton + ' inverted'}
                   onClick={() => setConfigureCookies(true)}
                 >
                   <FormattedMessage
@@ -311,7 +311,7 @@ const Banner = (props) => {
                 <FormattedMessage id="Back" defaultMessage="Back" />
               </Button>
               <Button
-                className={bannerAgreeButtonCss}
+                className={bannerAgreeButton}
                 onClick={() => confirmAll()}
               >
                 <FormattedMessage
@@ -320,7 +320,7 @@ const Banner = (props) => {
                 />
               </Button>
               <Button
-                className={bannerAdjustButtonCss}
+                className={bannerAdjustButton}
                 onClick={() => confirmSelection()}
               >
                 <FormattedMessage id="Save" defaultMessage="Save" />

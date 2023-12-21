@@ -102,16 +102,16 @@ config.settings.DSGVOBanner = {
 You can customize the Style of the Modal Buttons
 ```
 config.settings.DSGVOBanner.cssClasses = {
-  bannerAgreeButtonCss: "branded olive",
-  bannerAdjustButtonCss: "branded blue",
+  bannerAgreeButton: "branded olive",
+  bannerAdjustButton: "branded blue",
   ...(config.settings.DSGVOBanner || {}),
 }
 ```
 Or something like  
 ```
 config.settings.DSGVOBanner.cssClasses = {
-  bannerAgreeButtonCss: "red",
-  bannerAdjustButtonCss: "pink",
+  bannerAgreeButton: "red",
+  bannerAdjustButton: "pink",
   ...(config.settings.DSGVOBanner || {}),
 }
 ```
