@@ -99,12 +99,11 @@ config.settings.DSGVOBanner = {
   privacy_url: '/privacy',
 };
 ```
-You can customize the Style of the Modal Buttons
+You can customize the style of the modal buttons
 ```
 config.settings.DSGVOBanner.cssClasses = {
   bannerAgreeButton: "branded olive",
   bannerAdjustButton: "branded blue",
-  ...(config.settings.DSGVOBanner || {}),
 }
 ```
 Or something like  
@@ -112,27 +111,22 @@ Or something like
 config.settings.DSGVOBanner.cssClasses = {
   bannerAgreeButton: "red",
   bannerAdjustButton: "pink",
-  ...(config.settings.DSGVOBanner || {}),
 }
 ```
 Keep in mind though, that the 'Adjust privacy Setting' Button will always stay inverted
 
 By default, the banner to configure cookies will be shown in an overlay the first time a user visits the site. You can disable this by setting the `useBanner` setting to `false`. In this case, you must add the "DSGVO Banner" block to a page (such as a privacy settings page) to allow users to configure their cookies.
 ```
-config.settings.DSGVOBanner = {
-  showBanner: false,
-  ...(config.settings.DSGVOBanner || {}),
-}
+config.settings.DSGVOBanner.showBanner = false ;
 ```
 You can also hide the greyed-out 'Technically required' option.
 ```
-config.settings.DSGVOBanner = {
-  showTechnicallyRequired: false,
-  ...(config.settings.DSGVOBanner || {}),
-}
+config.settings.DSGVOBanner.showTechnicallyRequired = false ;
 ```
 
 # Supported Modules
+Per default only the 'tracking' , 'youtube' , 'facebook' and 'google' Modules are enabled. However, the following List contains all supported Modules :
+
 - 'tracking'
 - 'youtube'
 - 'facebook'
