@@ -29,9 +29,9 @@ export default (config) => {
     modules: ['tracking', 'youtube', 'facebook', 'google'],
     showBanner: true,
     showTechnicallyRequired: true,
-    cssClasses : {
-      bannerAgreeButton: "branded olive",
-      bannerAdjustButton: "branded blue",
+    cssClasses: {
+      bannerAgreeButton: 'branded olive',
+      bannerAdjustButton: 'branded blue',
     },
     privacy_url: '/privacy',
     ...(config.settings.DSGVOBanner || {}),
