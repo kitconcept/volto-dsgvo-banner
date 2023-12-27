@@ -1,6 +1,6 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import { includes } from 'lodash';
-import { Checkbox, Form } from 'semantic-ui-react';
+import { Checkbox, Form, Button } from 'semantic-ui-react';
 import { useCookies } from 'react-cookie';
 import config from '@plone/volto/registry';
 import { useIntl, defineMessages, FormattedMessage } from 'react-intl';
@@ -18,6 +18,10 @@ const messages = defineMessages({
 
 const View = (props) => {
   const modules = config.settings.DSGVOBanner.modules;
+  const showTechnicallyRequired =
+    config.settings.DSGVOBanner.showTechnicallyRequired;
+  const bannerAgreeButton =
+    config.settings.DSGVOBanner.cssClasses.bannerAgreeButton;
   const [cookies, setCookie, removeCookie] = useCookies();
   const intl = useIntl();
 
@@ -33,6 +37,12 @@ const View = (props) => {
   const [confirmGoogle, setConfirmGoogle] = useState(
     !!Number(cookies.confirm_google),
   );
+  const [confirmVimeo, setConfirmVimeo] = useState(
+    !!Number(cookies.confirm_vimeo),
+  );
+  const [confirmTwitter, setConfirmTwitter] = useState(
+    !!Number(cookies.confirm_twitter),
+  );
 
   const expiryDate = new Date();
   expiryDate.setMonth(expiryDate.getMonth() + 1);
@@ -41,6 +51,7 @@ const View = (props) => {
   const confirmSelection = () => {
     let expiryDate = new Date();
     expiryDate.setMonth(expiryDate.getMonth() + 1);
+
     if (confirmTracking) {
       setCookie('confirm_tracking', 1, options);
       window[`ga-disable-${config.settings.DSGVOBanner.trackingId}`] = false;
@@ -70,21 +81,47 @@ const View = (props) => {
       removeCookie('confirm_google', options);
     }
 
+    if (confirmVimeo) {
+      setCookie('confirm_vimeo', 1, options);
+    } else {
+      removeCookie('confirm_vimeo', 1, options);
+    }
+
+    if (confirmTwitter) {
+      setCookie('confirm_twitter', 1, options);
+    } else {
+      removeCookie('confirm_twitter', 1, options);
+    }
+
     setCookie('confirm_cookies', 1, options);
-    props.hideDSGVOBanner();
   };
+
+  //Save the selection on every switch in the settings
+  useEffect(() => {
+    confirmSelection();
+    // eslint-disable-next-line react-hooks/exhaustive-deps
+  }, [
+    confirmYoutube,
+    confirmVimeo,
+    confirmTwitter,
+    confirmFacebook,
+    confirmGoogle,
+    confirmTracking,
+  ]);
 
   return (
     <>
       <Form>
-        <Form.Field>
-          <Checkbox
-            toggle
-            label={intl.formatMessage(messages.technically_required)}
-            checked
-            disabled
-          />
-        </Form.Field>
+        {showTechnicallyRequired && (
+          <Form.Field>
+            <Checkbox
+              toggle
+              label={intl.formatMessage(messages.technically_required)}
+              checked
+              disabled
+            />
+          </Form.Field>
+        )}
         {includes(modules, 'tracking') && (
           <Form.Field>
             <Checkbox
@@ -125,13 +162,32 @@ const View = (props) => {
             />
           </Form.Field>
         )}
-        <Form.Button
-          className="branded blue"
-          branded
-          onClick={confirmSelection}
+        {includes(modules, 'vimeo') && (
+          <Form.Field>
+            <Checkbox
+              toggle
+              label="Vimeo"
+              onChange={() => setConfirmVimeo(!confirmVimeo)}
+              checked={confirmVimeo}
+            />
+          </Form.Field>
+        )}
+        {includes(modules, 'twitter') && (
+          <Form.Field>
+            <Checkbox
+              toggle
+              label="Twitter"
+              onChange={() => setConfirmTwitter(!confirmTwitter)}
+              checked={confirmTwitter}
+            />
+          </Form.Field>
+        )}
+        <Button
+          className={bannerAgreeButton}
+          onClick={() => confirmSelection()}
         >
           <FormattedMessage id="Save" defaultMessage="Save" />
-        </Form.Button>
+        </Button>
       </Form>
     </>
   );

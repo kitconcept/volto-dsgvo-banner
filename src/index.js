@@ -27,6 +27,12 @@ export default (config) => {
       gtagOptions: {},
     },
     modules: ['tracking', 'youtube', 'facebook', 'google'],
+    showBanner: true,
+    showTechnicallyRequired: true,
+    cssClasses : {
+      bannerAgreeButton: "branded olive",
+      bannerAdjustButton: "branded blue",
+    },
     privacy_url: '/privacy',
     ...(config.settings.DSGVOBanner || {}),
   };

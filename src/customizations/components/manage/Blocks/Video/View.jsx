@@ -17,58 +17,109 @@ import { IfConfirm } from '../../../../../components';
  * @extends Component
  */
 const View = ({ data }) => (
-  <IfConfirm module="youtube">
-    <div
-      className={cx(
-        'block video align',
-        {
-          center: !Boolean(data.align),
-        },
-        data.align,
-      )}
-    >
-      {data.url && (
+  <>
+    {data.url.match('youtu') ? (
+      <>
+        <IfConfirm module="youtube">
+          <div
+            className={cx(
+              'block video align',
+              {
+                center: !Boolean(data.align),
+              },
+              data.align,
+            )}
+          >
+            {data.url && (
+              <div
+                className={cx('video-inner', {
+                  'full-width': data.align === 'full',
+                })}
+              >
+                {data.url.match('youtu') && (
+                  <>
+                    {data.url.match('list') ? (
+                      data.preview_image ? (
+                        <Embed
+                          url={`https://www.youtube.com/embed/videoseries?list=${
+                            data.url.match(/^.*\?list=(.*)$/)[1]
+                          }`}
+                          placeholder={
+                            isInternalURL(data.preview_image)
+                              ? `${flattenToAppURL(
+                                  data.preview_image,
+                                )}/@@images/image`
+                              : data.preview_image
+                          }
+                          defaultActive
+                          autoplay={false}
+                        />
+                      ) : (
+                        <Embed
+                          url={`https://www.youtube.com/embed/videoseries?list=${
+                            data.url.match(/^.*\?list=(.*)$/)[1]
+                          }`}
+                          icon="play"
+                          defaultActive
+                          autoplay={false}
+                        />
+                      )
+                    ) : data.preview_image ? (
+                      <Embed
+                        id={
+                          data.url.match(/.be\//)
+                            ? data.url.match(/^.*\.be\/(.*)/)[1]
+                            : data.url.match(/^.*\?v=(.*)$/)[1]
+                        }
+                        source="youtube"
+                        placeholder={
+                          isInternalURL(data.preview_image)
+                            ? `${flattenToAppURL(
+                                data.preview_image,
+                              )}/@@images/image`
+                            : data.preview_image
+                        }
+                        icon="play"
+                        autoplay={false}
+                      />
+                    ) : (
+                      <Embed
+                        id={
+                          data.url.match(/.be\//)
+                            ? data.url.match(/^.*\.be\/(.*)/)[1]
+                            : data.url.match(/^.*\?v=(.*)$/)[1]
+                        }
+                        source="youtube"
+                        icon="play"
+                        defaultActive
+                        autoplay={false}
+                      />
+                    )}
+                  </>
+                )}
+              </div>
+            )}
+          </div>
+        </IfConfirm>
+      </>
+    ) : (
+      <IfConfirm module="vimeo">
         <div
-          className={cx('video-inner', {
-            'full-width': data.align === 'full',
-          })}
-        >
-          {data.url.match('youtu') ? (
-            <>
-              {data.url.match('list') ? (
-                data.preview_image ? (
-                  <Embed
-                    url={`https://www.youtube.com/embed/videoseries?list=${
-                      data.url.match(/^.*\?list=(.*)$/)[1]
-                    }`}
-                    placeholder={
-                      isInternalURL(data.preview_image)
-                        ? `${flattenToAppURL(
-                            data.preview_image,
-                          )}/@@images/image`
-                        : data.preview_image
-                    }
-                    defaultActive
-                    autoplay={false}
-                  />
-                ) : (
-                  <Embed
-                    url={`https://www.youtube.com/embed/videoseries?list=${
-                      data.url.match(/^.*\?list=(.*)$/)[1]
-                    }`}
-                    icon="play"
-                    defaultActive
-                    autoplay={false}
-                  />
-                )
-              ) : data.preview_image ? (
+          className={cx(
+            'block video align',
+            {
+              center: !Boolean(data.align),
+            },
+            data.align,
+          )}
+        />
+        {data.url && (
+          <>
+            {data.url.match('vimeo') ? (
+              data.preview_image ? (
                 <Embed
-                  id={
-                    data.url.match(/.be\//)
-                      ? data.url.match(/^.*\.be\/(.*)/)[1]
-                      : data.url.match(/^.*\?v=(.*)$/)[1]
-                  }
-                  source="youtube"
+                  id={data.url.match(/^.*\.com\/(.*)/)[1]}
+                  source="vimeo"
                   placeholder={
                     isInternalURL(data.preview_image)
                       ? `${flattenToAppURL(data.preview_image)}/@@images/image`
@@ -79,77 +130,45 @@ const View = ({ data }) => (
                 />
               ) : (
                 <Embed
-                  id={
-                    data.url.match(/.be\//)
-                      ? data.url.match(/^.*\.be\/(.*)/)[1]
-                      : data.url.match(/^.*\?v=(.*)$/)[1]
-                  }
-                  source="youtube"
+                  id={data.url.match(/^.*\.com\/(.*)/)[1]}
+                  source="vimeo"
                   icon="play"
                   defaultActive
                   autoplay={false}
                 />
-              )}
-            </>
-          ) : (
-            <>
-              {data.url.match('vimeo') ? (
-                data.preview_image ? (
-                  <Embed
-                    id={data.url.match(/^.*\.com\/(.*)/)[1]}
-                    source="vimeo"
-                    placeholder={
-                      isInternalURL(data.preview_image)
-                        ? `${flattenToAppURL(
-                            data.preview_image,
-                          )}/@@images/image`
-                        : data.preview_image
+              )
+            ) : (
+              <>
+                {data.url.match('.mp4') ? (
+                  // eslint-disable-next-line jsx-a11y/media-has-caption
+                  <video
+                    src={
+                      isInternalURL(data.url)
+                        ? `${flattenToAppURL(data.url)}/@@download/file`
+                        : data.url
                     }
-                    icon="play"
-                    autoplay={false}
+                    controls
+                    poster={
+                      data.preview_image
+                        ? isInternalURL(data.preview_image)
+                          ? `${flattenToAppURL(
+                              data.preview_image,
+                            )}/@@images/image`
+                          : data.preview_image
+                        : ''
+                    }
+                    type="video/mp4"
                   />
                 ) : (
-                  <Embed
-                    id={data.url.match(/^.*\.com\/(.*)/)[1]}
-                    source="vimeo"
-                    icon="play"
-                    defaultActive
-                    autoplay={false}
-                  />
-                )
-              ) : (
-                <>
-                  {data.url.match('.mp4') ? (
-                    // eslint-disable-next-line jsx-a11y/media-has-caption
-                    <video
-                      src={
-                        isInternalURL(data.url)
-                          ? `${flattenToAppURL(data.url)}/@@download/file`
-                          : data.url
-                      }
-                      controls
-                      poster={
-                        data.preview_image
-                          ? isInternalURL(data.preview_image)
-                            ? `${flattenToAppURL(
-                                data.preview_image,
-                              )}/@@images/image`
-                            : data.preview_image
-                          : ''
-                      }
-                      type="video/mp4"
-                    />
-                  ) : (
-                    <div className="invalidVideoFormat" />
-                  )}
-                </>
-              )}
-            </>
-          )}
-        </div>
-      )}
-    </div>
-  </IfConfirm>
+                  <div className="invalidVideoFormat" />
+                )}
+              </>
+            )}
+          </>
+        )}
+      </IfConfirm>
+    )}
+  </>
 );
 
 /**
