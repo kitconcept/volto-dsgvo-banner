@@ -8,6 +8,13 @@
 
 <!-- towncrier release notes start -->
 
+## 2.3.0 (2023-12-28)
+
+### Feature
+
+- Added Differentiation between Youtube and Vimeo Videos in the Video-View, and added Twitter Module and Cookie Option if someone uses volto-social-blocks with this Addon @Molochem [#23](https://github.com/kitconcept/volto-dsgvo-block/pull/23)
+- Added : Interchangeable Button Colors, The Option to Hide the Banner on First Connect and the Option to hide the "Technically Required" Checkbox @Molochem [#24](https://github.com/kitconcept/volto-dsgvo-block/pull/24)
+
 ## 2.2.0 (2023-07-26)
 
 ### Feature
