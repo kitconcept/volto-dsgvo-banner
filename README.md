@@ -5,7 +5,7 @@
 [![Build Status](https://github.com/kitconcept/volto-dsgvo-banner/actions/workflows/unit.yml/badge.svg)](https://github.com/kitconcept/volto-dsgvo-banner/actions)
 [![Build Status](https://github.com/kitconcept/volto-dsgvo-banner/actions/workflows/acceptance.yml/badge.svg)](https://github.com/kitconcept/volto-dsgvo-banner/actions)
 
-![kitconcept GmbH](https://github.com/kitconcept/volto-blocks/raw/master/kitconcept.png)
+![kitconcept GmbH](https://github.com/kitconcept/volto-blocks/raw/main/kitconcept.png)
 
 The Volto DSGVO Banner addon gives the user the possibility to accept certain cookies.
 
@@ -13,19 +13,19 @@ The Volto DSGVO Banner addon gives the user the possibility to accept certain co
 
 When you visit the website for the first time you will get the following overlay:
 
-![Accept](https://github.com/kitconcept/volto-dsgvo-banner/raw/master/accept.png)
+![Accept](https://github.com/kitconcept/volto-dsgvo-banner/raw/main/accept.png)
 
 If you select "Adjust Privacy Settings" you can select which cookies you want to accept:
 
-![Settings](https://github.com/kitconcept/volto-dsgvo-banner/raw/master/settings.png)
+![Settings](https://github.com/kitconcept/volto-dsgvo-banner/raw/main/settings.png)
 
 If you view a piece of content where you haven't accepted the cookie for you will be notified and have the option to change the cookies.
 
-![Message](https://github.com/kitconcept/volto-dsgvo-banner/raw/master/message.png)
+![Message](https://github.com/kitconcept/volto-dsgvo-banner/raw/main/message.png)
 
 There is also a block which you can insert on your data protection page to adjust the settings there.
 
-![Block](https://github.com/kitconcept/volto-dsgvo-banner/raw/master/block.png)
+![Block](https://github.com/kitconcept/volto-dsgvo-banner/raw/main/block.png)
 
 ## Installation
 
@@ -106,7 +106,7 @@ config.settings.DSGVOBanner.cssClasses = {
   bannerAdjustButton: "branded blue",
 }
 ```
-Or something like  
+Or something like
 ```
 config.settings.DSGVOBanner.cssClasses = {
   bannerAgreeButton: "red",
