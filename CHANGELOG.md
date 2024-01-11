@@ -8,6 +8,12 @@
 
 <!-- towncrier release notes start -->
 
+## 2.3.1 (2024-01-11)
+
+### Bugfix
+
+- Update the video block customization to latest volto. @iFlameing [#26](https://github.com/kitconcept/volto-dsgvo-block/pull/26)
+
 ## 2.3.0 (2023-12-28)
 
 ### Feature
