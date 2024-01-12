@@ -8,6 +8,12 @@
 
 <!-- towncrier release notes start -->
 
+## 2.3.2 (2024-01-12)
+
+### Bugfix
+
+- Fix default export in `index.js` @sneridagh [#29](https://github.com/kitconcept/volto-dsgvo-block/pull/29)
+
 ## 2.3.1 (2024-01-11)
 
 ### Bugfix
