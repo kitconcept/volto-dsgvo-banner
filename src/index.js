@@ -8,7 +8,7 @@ import loadable from '@loadable/component';
 
 import './theme/main.less';
 
-export default (config) => {
+const applyConfig = (config) => {
   config.settings.appExtras.push({
     match: '',
     component: Banner,
@@ -63,3 +63,5 @@ export default (config) => {
   });
   return config;
 };
+
+export default applyConfig;
