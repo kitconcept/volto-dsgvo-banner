@@ -26,8 +26,8 @@ const applyConfig = (config) => {
       },
       gtagOptions: {},
     },
-    modules: ['tracking', 'youtube', 'facebook', 'google'],
-    showBanner: true,
+    modules: ['youtube', 'facebook', 'google'],
+    // showBanner: true,
     showTechnicallyRequired: true,
     cssClasses: {
       bannerAgreeButton: 'branded olive',
@@ -36,6 +36,8 @@ const applyConfig = (config) => {
     privacy_url: '/privacy',
     ...(config.settings.DSGVOBanner || {}),
   };
+  config.settings.DSGVOBanner.showBanner =
+    config.settings.DSGVOBanner.modules.includes('tracking') ? true : false;
   config.settings.loadables['reactGa'] = loadable.lib(() =>
     import('react-ga4'),
   );
