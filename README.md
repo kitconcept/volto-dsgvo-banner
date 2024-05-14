@@ -67,10 +67,10 @@ Go to http://localhost:3000, and the cookie confirmation screen will popup.
 
 From `2.0.0` version on, it supports Google Analytics 4 and deprecates version 3. If you are still using GA3, you should use a version of this package of the 1.x.x series.
 
-|Version   |GA version    |
-|----------|--------------|
-|>=2.0.0   |GA4           |
-|<2.0.0    |GA3           |
+| Version | GA version |
+| ------- | ---------- |
+| >=2.0.0 | GA4        |
+| <2.0.0  | GA3        |
 
 ## Customization
 
@@ -99,32 +99,41 @@ config.settings.DSGVOBanner = {
   privacy_url: '/privacy',
 };
 ```
+
 You can customize the style of the modal buttons
+
 ```
 config.settings.DSGVOBanner.cssClasses = {
   bannerAgreeButton: "branded olive",
   bannerAdjustButton: "branded blue",
 }
 ```
+
 Or something like
+
 ```
 config.settings.DSGVOBanner.cssClasses = {
   bannerAgreeButton: "red",
   bannerAdjustButton: "pink",
 }
 ```
+
 Keep in mind though, that the 'Adjust privacy Setting' Button will always stay inverted
 
-By default, the banner to configure cookies will be shown in an overlay the first time a user visits the site. You can disable this by setting the `useBanner` setting to `false`. In this case, you must add the "DSGVO Banner" block to a page (such as a privacy settings page) to allow users to configure their cookies.
+By default, the banner to configure cookies will be shown in an overlay the first time a user visits the site. You can disable this by setting the `showBanner` setting to `false`. In this case, you must add the "DSGVO Banner" block to a page (such as a privacy settings page) to allow users to configure their cookies.
+
 ```
 config.settings.DSGVOBanner.showBanner = false ;
 ```
+
 You can also hide the greyed-out 'Technically required' option.
+
 ```
 config.settings.DSGVOBanner.showTechnicallyRequired = false ;
 ```
 
 # Supported Modules
+
 Per default only the 'tracking' , 'youtube' , 'facebook' and 'google' Modules are enabled. However, the following List contains all supported Modules :
 
 - 'tracking'
