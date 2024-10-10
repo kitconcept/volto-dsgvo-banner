@@ -56,7 +56,7 @@ msgstr "Tecnicamente requerido"
 #: components/Banner/Banner
 # defaultMessage: To give you the best possible user experience, we use cookies on our website. Cookies required for the operation of the site are set automatically. You can also allow other cookies. You can {agree_all_cookies} or {adjust_privacy_settings}.
 msgid "To give you the best possible user experience, we use cookies on our website. Cookies required for the operation of the site are set automatically. You can also allow other cookies. You can {agree_all_cookies} or {adjust_privacy_settings}."
-msgstr "Para dar à você a melhor experiência de usuário possível, usamos cookies em nosso website. Cookies necessários para o funcionamento do site são configurados automaticamente. Você também pode permitir outros cookies. Você pode {agree_all_cookies} ou {adjust_privacy_settings}."
+msgstr "Para dar à você a melhor experiência de usuário possível, utilizamos cookies em nosso site. Cookies necessários para o funcionamento do site são configurados automaticamente. Você também pode permitir outros cookies. Você pode {agree_all_cookies} ou {adjust_privacy_settings}."
 
 #: components/Banner/Banner
 #: components/Block/View
