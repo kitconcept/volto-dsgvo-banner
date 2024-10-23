@@ -83,3 +83,4 @@ msgstr "ajustar as configurações de privacidade"
 # defaultMessage: agree to all cookies
 msgid "agree to all cookies"
 msgstr "aceitar todos os cookies"
+
