@@ -1,0 +1,86 @@
+msgid ""
+msgstr ""
+"Project-Id-Version: \n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: \n"
+"PO-Revision-Date: \n"
+"Last-Translator: \n"
+"Language: \n"
+"Language-Team: \n"
+"Content-Type: \n"
+"Content-Transfer-Encoding: \n"
+"Plural-Forms: \n"
+
+#: components/Banner/Banner
+# defaultMessage: Adjust privacy settings
+msgid "Adjust privacy settings"
+msgstr "Ajustar configurações de privacidade"
+
+#: components/Banner/Banner
+# defaultMessage: Agree to all cookies
+msgid "Agree to all cookies"
+msgstr "Aceitar todos os cookies"
+
+#: components/Banner/Banner
+# defaultMessage: Back
+msgid "Back"
+msgstr "Voltar"
+
+#: components/IfConfirm/IfConfirm
+# defaultMessage: Customize Privacy Settings
+msgid "Customize Privacy Settings"
+msgstr "Customizar Configurações de Privacidade"
+
+#: components/Banner/Banner
+# defaultMessage: Privacy Notice
+msgid "Privacy Notice"
+msgstr "Aviso de Privacidade"
+
+#: components/Banner/Banner
+# defaultMessage: Privacy Policy
+msgid "Privacy Policy"
+msgstr "Políticas de Privacidade"
+
+#: components/Banner/Banner
+#: components/Block/View
+# defaultMessage: Save
+msgid "Save"
+msgstr "Salvar"
+
+#: components/Banner/Banner
+#: components/Block/View
+# defaultMessage: Technically required
+msgid "Technically required"
+msgstr "Tecnicamente requerido"
+
+#: components/Banner/Banner
+# defaultMessage: To give you the best possible user experience, we use cookies on our website. Cookies required for the operation of the site are set automatically. You can also allow other cookies. You can {agree_all_cookies} or {adjust_privacy_settings}.
+msgid "To give you the best possible user experience, we use cookies on our website. Cookies required for the operation of the site are set automatically. You can also allow other cookies. You can {agree_all_cookies} or {adjust_privacy_settings}."
+msgstr "Para dar à você a melhor experiência de usuário possível, utilizamos cookies em nosso site. Cookies necessários para o funcionamento do site são configurados automaticamente. Você também pode permitir outros cookies. Você pode {agree_all_cookies} ou {adjust_privacy_settings}."
+
+#: components/Banner/Banner
+#: components/Block/View
+# defaultMessage: Tracking
+msgid "Tracking"
+msgstr "Tracking"
+
+#: components/Banner/Banner
+# defaultMessage: You can find more information on the used cookies and how you can subsequently revoke your consent in our
+msgid "You can find more information on the used cookies and how you can subsequently revoke your consent in our"
+msgstr "Você pode encontrar mais informações sobre os cookies usados e como pode revogar seu consentimento posteriormente em nosso"
+
+#: components/IfConfirm/IfConfirm
+# defaultMessage: You can not view this content at this moment because you have selected to disable {module} cookies in the privacy settings.
+msgid "You can not view this content at this moment because you have selected to disable {module} cookies in the privacy settings."
+msgstr "Você não consegue ver este conteúdo neste momento pois selecionou desabilitar os cookies de {module} nas configurações de privacidade."
+
+#: components/Banner/Banner
+# defaultMessage: adjust the privacy settings
+msgid "adjust the privacy settings"
+msgstr "ajustar as configurações de privacidade"
+
+#: components/Banner/Banner
+# defaultMessage: agree to all cookies
+msgid "agree to all cookies"
+msgstr "aceitar todos os cookies"
+
