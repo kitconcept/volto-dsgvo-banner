@@ -145,7 +145,7 @@ const Banner = (props) => {
         open={showConfirmModal}
         dimmer="inverted"
         closeOnDimmerClick={false}
-        className="dsgvo-banner"
+        className="dsgvo-cookie-banner"
       >
         {!configureCookies ? (
           <>
