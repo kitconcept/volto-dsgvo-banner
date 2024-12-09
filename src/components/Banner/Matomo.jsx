@@ -8,15 +8,16 @@ const Matomo = ({ matomoTracker }) => {
   const confirmTracking = !!Number(cookies.confirm_tracking);
   let tracker;
 
-  if (__CLIENT__) {
-    tracker = new matomoTracker.default({
-      urlBase: config.settings.DSGVOBanner.tracker.urlBase,
-      siteId: config.settings.DSGVOBanner.tracker.id,
-    });
-  }
-
   useEffect(() => {
-    if (confirmTracking) {
+    if (confirmTracking && __CLIENT__ ) {
+      tracker = new matomoTracker.default({
+        urlBase: config.settings.DSGVOBanner.tracker.urlBase,
+        siteId: config.settings.DSGVOBanner.tracker.id,
+        configurations: { // optional, default value: {}
+          disableCookies: false,
+          setSecureCookie: true,
+        },
+      });
       tracker.trackPageView();
     }
   }, [tracker, confirmTracking]);
