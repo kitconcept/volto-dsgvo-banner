@@ -1,0 +1,88 @@
+# Translation of volto.pot to Catalan
+# Roger Boixader Güell <rogerboixaderguell@gmail.com>, 2025.
+msgid ""
+msgstr ""
+"Project-Id-Version: Plone\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2025-05-09 08:00+0200\n"
+"PO-Revision-Date: 2025-05-09 08:00+0200\n"
+"Last-Translator: Roger Boixader Güell <rogerboixaderguell@gmail.com>\n"
+"Language: ca\n"
+"Language-Team: \n"
+"Preferred-Encodings: utf-8\n"
+"Content-Type: text/plain; charset=utf-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=2; plural=(n != 1);\n"
+"MIME-Version: 1.0\n"
+"Language-Code: ca\n"
+"Language-Name: Català\n"
+
+# defaultMessage: Adjust privacy settings
+#: components/Banner/Banner
+msgid "Adjust privacy settings"
+msgstr "Ajustar la configuració de privacitat"
+
+# defaultMessage: Agree to all cookies
+#: components/Banner/Banner
+msgid "Agree to all cookies"
+msgstr "Acceptar totes les galetes"
+
+# defaultMessage: Back
+#: components/Banner/Banner
+msgid "Back"
+msgstr "Enrere"
+
+# defaultMessage: Customize Privacy Settings
+#: components/IfConfirm/IfConfirm
+msgid "Customize Privacy Settings"
+msgstr "Personalitzar la configuració de privacitat"
+
+# defaultMessage: Privacy Notice
+#: components/Banner/Banner
+msgid "Privacy Notice"
+msgstr "Avís de Privacitat"
+
+# defaultMessage: Privacy Policy
+#: components/Banner/Banner
+msgid "Privacy Policy"
+msgstr "Política de Privacitat"
+
+# defaultMessage: Save
+#: components/Banner/Banner components/Block/View
+msgid "Save"
+msgstr "Desar"
+
+# defaultMessage: Technically required
+#: components/Banner/Banner components/Block/View
+msgid "Technically required"
+msgstr "Requerit tècnicament"
+
+# defaultMessage: To give you the best possible user experience, we use cookies on our website. Cookies required for the operation of the site are set automatically. You can also allow other cookies. You can {agree_all_cookies} or {adjust_privacy_settings}.
+#: components/Banner/Banner
+msgid "To give you the best possible user experience, we use cookies on our website. Cookies required for the operation of the site are set automatically. You can also allow other cookies. You can {agree_all_cookies} or {adjust_privacy_settings}."
+msgstr "Per oferir-vos la millor experiència d'usuari possible, utilitzem galetes al nostre lloc web. Les galetes necessàries per al funcionament del lloc es configuren automàticament. També podeu permetre altres galetes. Podeu {agree_all_cookies} o {adjust_privacy_settings}."
+
+# defaultMessage: Tracking
+#: components/Banner/Banner components/Block/View
+msgid "Tracking"
+msgstr "Seguiment"
+
+# defaultMessage: You can find more information on the used cookies and how you can subsequently revoke your consent in our
+#: components/Banner/Banner
+msgid "You can find more information on the used cookies and how you can subsequently revoke your consent in our"
+msgstr "Podeu trobar més informació sobre les galetes utilitzades i com podeu revocar el vostre consentiment posteriorment en la nostra"
+
+# defaultMessage: You can not view this content at this moment because you have selected to disable {module} cookies in the privacy settings.
+#: components/IfConfirm/IfConfirm
+msgid "You can not view this content at this moment because you have selected to disable {module} cookies in the privacy settings."
+msgstr "No podeu veure aquest contingut en aquest moment perquè heu seleccionat desactivar les galetes de {module} a la configuració de privacitat."
+
+# defaultMessage: adjust the privacy settings
+#: components/Banner/Banner
+msgid "adjust the privacy settings"
+msgstr "ajustar la configuració de privacitat"
+
+# defaultMessage: agree to all cookies
+#: components/Banner/Banner
+msgid "agree to all cookies"
+msgstr "acceptar totes les galetes"
