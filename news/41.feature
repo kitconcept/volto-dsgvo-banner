@@ -1,0 +1,1 @@
+- Add Catalan translations @rboixaderg
