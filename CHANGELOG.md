@@ -8,6 +8,12 @@
 
 <!-- towncrier release notes start -->
 
+## 2.4.0 (2025-06-04)
+
+### Feature
+
+- - Add Catalan translations @rboixaderg [#41](https://github.com/kitconcept/volto-dsgvo-block/pull/41)
+
 ## 2.3.2 (2024-01-12)
 
 ### Bugfix
