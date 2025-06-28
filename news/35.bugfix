@@ -1,0 +1,1 @@
+Only create Matomo Tracker instance if confirm_tracking cookie has been set. @fredvd
