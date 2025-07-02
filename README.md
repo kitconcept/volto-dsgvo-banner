@@ -1,33 +1,69 @@
-# Volto DSGVO Banner
+# Volto dsgvo banner (@kitconcept/volto-dsgvo-banner)
 
-[![NPM](https://img.shields.io/npm/v/@kitconcept/volto-dsgvo-banner.svg)](https://www.npmjs.com/package/@kitconcept/volto-dsgvo-banner)
-[![Build Status](https://github.com/kitconcept/volto-dsgvo-banner/actions/workflows/code.yml/badge.svg)](https://github.com/kitconcept/volto-dsgvo-banner/actions)
-[![Build Status](https://github.com/kitconcept/volto-dsgvo-banner/actions/workflows/unit.yml/badge.svg)](https://github.com/kitconcept/volto-dsgvo-banner/actions)
-[![Build Status](https://github.com/kitconcept/volto-dsgvo-banner/actions/workflows/acceptance.yml/badge.svg)](https://github.com/kitconcept/volto-dsgvo-banner/actions)
+DSGVO banner
 
-![kitconcept GmbH](https://github.com/kitconcept/volto-blocks/raw/main/kitconcept.png)
+[![npm](https://img.shields.io/npm/v/@kitconcept/volto-dsgvo-banner)](https://www.npmjs.com/package/@kitconcept/volto-dsgvo-banner)
+[![](https://img.shields.io/badge/-Storybook-ff4785?logo=Storybook&logoColor=white&style=flat-square)](https://kitconcept.github.io/volto-dsgvo-banner/)
+[![Code analysis checks](https://github.com/kitconcept/volto-dsgvo-banner/actions/workflows/code.yml/badge.svg)](https://github.com/kitconcept/volto-dsgvo-banner/actions/workflows/code.yml)
+[![Unit tests](https://github.com/kitconcept/volto-dsgvo-banner/actions/workflows/unit.yml/badge.svg)](https://github.com/kitconcept/volto-dsgvo-banner/actions/workflows/unit.yml)
 
-The Volto DSGVO Banner addon gives the user the possibility to accept certain cookies.
+<picture>
+  <source media="(prefers-color-scheme: dark)" srcset="https://kitconcept.com/kitconcept-white.svg">
+  <img width="300" alt="kitconcept, GmbH" src="https://kitconcept.com/kitconcept-black.svg">
+</picture>
 
 ## Screenshots
 
 When you visit the website for the first time you will get the following overlay:
 
-![Accept](https://github.com/kitconcept/volto-dsgvo-banner/raw/main/accept.png)
+![Accept](accept.png)
 
 If you select "Adjust Privacy Settings" you can select which cookies you want to accept:
 
-![Settings](https://github.com/kitconcept/volto-dsgvo-banner/raw/main/settings.png)
+![Settings](settings.png)
 
 If you view a piece of content where you haven't accepted the cookie for you will be notified and have the option to change the cookies.
 
-![Message](https://github.com/kitconcept/volto-dsgvo-banner/raw/main/message.png)
+![Message](message.png)
 
 There is also a block which you can insert on your data protection page to adjust the settings there.
 
-![Block](https://github.com/kitconcept/volto-dsgvo-banner/raw/main/block.png)
+![Block](block.png)
+
+## Features
+
+The Volto DSGVO Banner addon gives the user the possibility to accept certain cookies.
+
+<!-- List your awesome features here -->
 
 ## Installation
+
+To install your project, you must choose the method appropriate to your version of Volto.
+
+
+### Volto 18 and later
+
+Add `@kitconcept/volto-dsgvo-banner` to your `package.json`:
+
+```json
+"dependencies": {
+    "@kitconcept/volto-dsgvo-banner": "*"
+}
+```
+
+Add `@kitconcept/volto-dsgvo-banner` to your `volto.config.js`:
+
+```javascript
+const addons = ['@kitconcept/volto-dsgvo-banner'];
+```
+
+If this package provides a Volto theme, and you want to activate it, then add the following to your `volto.config.js`:
+
+```javascript
+const theme = '@kitconcept/volto-dsgvo-banner';
+```
+
+### Volto 17 and earlier
 
 Create a new Volto project (you can skip this step if you already have one):
 
@@ -37,9 +73,9 @@ yo @plone/volto my-volto-project --addon @kitconcept/volto-dsgvo-banner
 cd my-volto-project
 ```
 
-Add `@kitconcept/volto-dsgvo-banner`to your package.json:
+Add `@kitconcept/volto-dsgvo-banner` to your package.json:
 
-```
+```JSON
 "addons": [
     "@kitconcept/volto-dsgvo-banner"
 ],
@@ -55,85 +91,156 @@ Download and install the new add-on by running:
 yarn install
 ```
 
-Start Volto with:
+Start volto with:
 
 ```
 yarn start
 ```
 
-Go to http://localhost:3000, and the cookie confirmation screen will popup.
+## Test installation
 
-## Compatibility
+Visit http://localhost:3000/ in a browser, login, and check the awesome new features.
 
-From `2.0.0` version on, it supports Google Analytics 4 and deprecates version 3. If you are still using GA3, you should use a version of this package of the 1.x.x series.
 
-|Version   |GA version    |
-|----------|--------------|
-|>=2.0.0   |GA4           |
-|<2.0.0    |GA3           |
+## Development
 
-## Customization
+The development of this add-on is done in isolation using a new approach using pnpm workspaces and latest `mrs-developer` and other Volto core improvements.
+For this reason, it only works with pnpm and Volto 18 (currently in alpha).
 
-You can customize your Google Analytics tracking id, the url where your privacy page is located and the modules you want to enable.
 
-```
-config.settings.DSGVOBanner = {
-  ...(config.settings.DSGVOBanner || {}),
-  trackingId: 'UA-123456789-1',
-  modules: ['tracking', 'youtube', 'facebook'],
-  privacy_url: '/privacy',
-};
+### Prerequisites ✅
+
+-   An [operating system](https://6.docs.plone.org/install/create-project-cookieplone.html#prerequisites-for-installation) that runs all the requirements mentioned.
+-   [nvm](https://6.docs.plone.org/install/create-project-cookieplone.html#nvm)
+-   [Node.js and pnpm](https://6.docs.plone.org/install/create-project.html#node-js) 22
+-   [Make](https://6.docs.plone.org/install/create-project-cookieplone.html#make)
+-   [Git](https://6.docs.plone.org/install/create-project-cookieplone.html#git)
+-   [Docker](https://docs.docker.com/get-started/get-docker/) (optional)
+
+### Installation 🔧
+
+1.  Clone this repository, then change your working directory.
+
+    ```shell
+    git clone git@github.com:kitconcept/volto-dsgvo-banner.git
+    cd volto-dsgvo-banner
+    ```
+
+2.  Install this code base.
+
+    ```shell
+    make install
+    ```
+
+
+### Make convenience commands
+
+Run `make help` to list the available commands.
+
+```text
+help                             Show this help
+install                          Installs the add-on in a development environment
+start                            Starts Volto, allowing reloading of the add-on during development
+build                            Build a production bundle for distribution of the project with the add-on
+i18n                             Sync i18n
+ci-i18n                          Check if i18n is not synced
+format                           Format codebase
+lint                             Lint, or catch and remove problems, in code base
+release                          Release the add-on on npmjs.org
+release-dry-run                  Dry-run the release of the add-on on npmjs.org
+test                             Run unit tests
+ci-test                          Run unit tests in CI
+backend-docker-start             Starts a Docker-based backend for development
+storybook-start                  Start Storybook server on port 6006
+storybook-build                  Build Storybook
+acceptance-frontend-dev-start    Start acceptance frontend in development mode
+acceptance-frontend-prod-start   Start acceptance frontend in production mode
+acceptance-backend-start         Start backend acceptance server
+ci-acceptance-backend-start      Start backend acceptance server in headless mode for CI
+acceptance-test                  Start Cypress in interactive mode
+ci-acceptance-test               Run cypress tests in headless mode for CI
 ```
 
-If you want to use Matomo instead of Google Analytics:
+### Development environment set up
 
-```
-config.settings.DSGVOBanner = {
-  ...(config.settings.DSGVOBanner || {}),
-  tracker: {
-    type: 'matomo',
-    id: 3,
-    urlBase: "https://matomo.example.com/"
-  },
-  modules: ['tracking', 'youtube', 'facebook'],
-  privacy_url: '/privacy',
-};
-```
-You can customize the style of the modal buttons
-```
-config.settings.DSGVOBanner.cssClasses = {
-  bannerAgreeButton: "branded olive",
-  bannerAdjustButton: "branded blue",
-}
-```
-Or something like
-```
-config.settings.DSGVOBanner.cssClasses = {
-  bannerAgreeButton: "red",
-  bannerAdjustButton: "pink",
-}
-```
-Keep in mind though, that the 'Adjust privacy Setting' Button will always stay inverted
+Install package requirements.
 
-By default, the banner to configure cookies will be shown in an overlay the first time a user visits the site. You can disable this by setting the `useBanner` setting to `false`. In this case, you must add the "DSGVO Banner" block to a page (such as a privacy settings page) to allow users to configure their cookies.
-```
-config.settings.DSGVOBanner.showBanner = false ;
-```
-You can also hide the greyed-out 'Technically required' option.
-```
-config.settings.DSGVOBanner.showTechnicallyRequired = false ;
+```shell
+make install
 ```
 
-# Supported Modules
-Per default only the 'tracking' , 'youtube' , 'facebook' and 'google' Modules are enabled. However, the following List contains all supported Modules :
+### Start developing
 
-- 'tracking'
-- 'youtube'
-- 'facebook'
-- 'google'
-- 'twitter'
-- 'vimeo'
+Start the backend.
 
-# License
+```shell
+make backend-docker-start
+```
+
+In a separate terminal session, start the frontend.
+
+```shell
+make start
+```
+
+### Lint code
+
+Run ESlint, Prettier, and Stylelint in analyze mode.
+
+```shell
+make lint
+```
+
+### Format code
+
+Run ESlint, Prettier, and Stylelint in fix mode.
+
+```shell
+make format
+```
+
+### i18n
+
+Extract the i18n messages to locales.
+
+```shell
+make i18n
+```
+
+### Unit tests
+
+Run unit tests.
+
+```shell
+make test
+```
+
+### Run Cypress tests
+
+Run each of these steps in separate terminal sessions.
+
+In the first session, start the frontend in development mode.
+
+```shell
+make acceptance-frontend-dev-start
+```
+
+In the second session, start the backend acceptance server.
+
+```shell
+make acceptance-backend-start
+```
+
+In the third session, start the Cypress interactive test runner.
+
+```shell
+make acceptance-test
+```
+
+## License
 
 The project is licensed under the MIT license.
+
+## Credits and acknowledgements 🙏
+
+Generated using [Cookieplone (0.9.7)](https://github.com/plone/cookieplone) and [cookieplone-templates (d3c64e9)](https://github.com/plone/cookieplone-templates/commit/d3c64e92c947928ea9bba83c1514b0f491dc97fb) on 2025-07-02 14:33:07.936222. A special thanks to all contributors and supporters!

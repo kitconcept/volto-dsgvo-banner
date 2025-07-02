@@ -1,4 +1,4 @@
-name: Code analysis checks
+name: i18n
 on:
   push:
     paths:
@@ -6,13 +6,13 @@ on:
       - "*.json"
       - "*.yaml"
       - "packages/**"
-      - ".github/workflows/code.yml"
+      - ".github/workflows/i18n.yml"
 
 env:
   NODE_VERSION: 22
 
 jobs:
-  codeanalysis:
+  unit:
     runs-on: ubuntu-latest
 
     steps:
@@ -43,5 +43,5 @@ jobs:
       - name: Install dependencies
         run: make install
 
-      - name: Linting
-        run: make lint
+      - name: test i18n command
+        run: make i18n
