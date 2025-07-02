@@ -7,7 +7,32 @@ DSGVO banner
 [![Code analysis checks](https://github.com/kitconcept/volto-dsgvo-banner/actions/workflows/code.yml/badge.svg)](https://github.com/kitconcept/volto-dsgvo-banner/actions/workflows/code.yml)
 [![Unit tests](https://github.com/kitconcept/volto-dsgvo-banner/actions/workflows/unit.yml/badge.svg)](https://github.com/kitconcept/volto-dsgvo-banner/actions/workflows/unit.yml)
 
+<picture>
+  <source media="(prefers-color-scheme: dark)" srcset="https://kitconcept.com/kitconcept-white.svg">
+  <img width="300" alt="kitconcept, GmbH" src="https://kitconcept.com/kitconcept-black.svg">
+</picture>
+
+## Screenshots
+
+When you visit the website for the first time you will get the following overlay:
+
+![Accept](accept.png)
+
+If you select "Adjust Privacy Settings" you can select which cookies you want to accept:
+
+![Settings](settings.png)
+
+If you view a piece of content where you haven't accepted the cookie for you will be notified and have the option to change the cookies.
+
+![Message](message.png)
+
+There is also a block which you can insert on your data protection page to adjust the settings there.
+
+![Block](block.png)
+
 ## Features
+
+The Volto DSGVO Banner addon gives the user the possibility to accept certain cookies.
 
 <!-- List your awesome features here -->
 
