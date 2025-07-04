@@ -34,3 +34,49 @@
 body.openCookieBanner {
   overflow-y: unset;
 }
+
+//dsgvo-overlay
+.dsgvo-overlay-wrapper {
+  position: relative;
+}
+
+.dsgvo-overlay {
+  position: absolute;
+  bottom: 0;
+  display: flex;
+  flex-flow: row;
+  height: 100%;
+  width: 100%;
+  background: rgba(0, 0, 0, 0.7);
+  z-index: 10;
+  align-items: flex-end;
+  justify-content: center;
+}
+
+.dsgvo-overlay-content {
+  color: white;
+  display: flex;
+  flex-flow: row;
+  align-self: flex-end;
+  padding: 1rem;
+  text-align: start;
+  @media only screen and (max-width: 900px) {
+    flex-flow: column;
+    align-items: flex-end;
+    justify-content: space-between;
+  }
+}
+
+.ui.button.dsgvo-allow-btn {
+  display: flex;
+  flex-flow: row;
+  align-items: flex-end;
+  margin-left: 1rem;
+  justify-content: flex-end;
+  background-color: white;
+  color: black;
+  border: none;
+  cursor: pointer;
+  border-radius: 0%;
+  white-space: nowrap;
+}
