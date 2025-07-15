@@ -1,4 +1,4 @@
-name: Code analysis checks
+name: Storybook
 on:
   push:
     paths:
@@ -6,17 +6,19 @@ on:
       - "*.json"
       - "*.yaml"
       - "packages/**"
-      - ".github/workflows/code.yml"
+      - ".github/workflows/storybook.yml"
 
 env:
   NODE_VERSION: 22
 
-jobs:
-  codeanalysis:
-    runs-on: ubuntu-latest
+permissions:
+  contents: write
 
+jobs:
+  build-and-deploy:
+    runs-on: ubuntu-latest
     steps:
-      - name: Main checkout
+      - name: Checkout
         uses: actions/checkout@v4
 
       - name: Use Node.js
@@ -43,5 +45,13 @@ jobs:
       - name: Install dependencies
         run: make install
 
-      - name: Linting
-        run: make lint
+      - name: Generate Storybook
+        run: |
+          make storybook-build
+
+      - name: Deploy to GitHub pages
+        uses: JamesIves/github-pages-deploy-action@v4
+        if: ${{ github.ref == 'refs/heads/main' }}
+        with:
+          branch: gh-pages
+          folder: .storybook-build

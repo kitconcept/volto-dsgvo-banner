@@ -1,0 +1,82 @@
+// DSGVO Modal
+.ui.modal.dsgvo-banner {
+  .actions {
+    @media only screen and (max-width: 900px) {
+      flex-direction: column;
+
+      .ui.button,
+      .ui.button.inverted {
+        padding: 20px 15px;
+      }
+    }
+  }
+
+  @media only screen and (max-width: 320px) {
+    margin-top: 10px !important;
+
+    .actions .ui.button {
+      padding: 10px 15px !important;
+      font-size: 14px;
+      letter-spacing: normal;
+    }
+  }
+
+  @media only screen and (max-width: 600px) {
+    width: 100%;
+    height: 100%;
+    padding-bottom: 100px;
+    margin: 0;
+    inset: 0;
+    overflow-y: scroll;
+  }
+}
+
+body.openCookieBanner {
+  overflow-y: unset;
+}
+
+//dsgvo-overlay
+.dsgvo-overlay-wrapper {
+  position: relative;
+}
+
+.dsgvo-overlay {
+  position: absolute;
+  z-index: 10;
+  bottom: 0;
+  display: flex;
+  width: 100%;
+  height: 100%;
+  flex-flow: row;
+  align-items: flex-end;
+  justify-content: center;
+  background: rgba(0, 0, 0, 0.7);
+}
+
+.dsgvo-overlay-content {
+  display: flex;
+  flex-flow: row;
+  align-self: flex-end;
+  margin: 1rem;
+  color: white;
+  text-align: start;
+  @media only screen and (max-width: 900px) {
+    flex-flow: column;
+    align-items: flex-end;
+    justify-content: space-between;
+  }
+}
+
+.ui.button.dsgvo-allow-btn {
+  display: flex;
+  flex-flow: row;
+  align-items: flex-end;
+  justify-content: flex-end;
+  border: none;
+  border-radius: 0%;
+  margin-left: 1rem;
+  background-color: white;
+  color: black;
+  cursor: pointer;
+  white-space: nowrap;
+}

@@ -1,8 +1,9 @@
 {
-  "name": "@kitconcept/volto-dsgvo-banner",
-  "version": "2.4.0",
-  "description": "volto-dsgvo-banner: Volto add-on",
-  "main": "src/index.js",
+  "name": "@kitconcept/volto-dsgvo-banner-dev",
+  "version": "1.0.0-alpha.0",
+  "description": "DSGVO banner",
+  "author": "kitconcept, GmbH",
+  "homepage": "https://github.com/kitconcept/volto-dsgvo-banner",
   "license": "MIT",
   "keywords": [
     "volto-addon",
@@ -10,79 +11,41 @@
     "plone",
     "react"
   ],
-  "publishConfig": {
-    "access": "public"
-  },
   "scripts": {
-    "dry-release": "release-it --dry-run",
-    "release": "release-it",
-    "release-major-alpha": "release-it major --preRelease=alpha",
-    "release-alpha": "release-it --preRelease=alpha"
-  },
-  "repository": {
-    "type": "git",
-    "url": "git+https://github.com/kitconcept/volto-dsgvo-banner.git"
-  },
-  "author": "kitconcept GmbH",
-  "bugs": {
-    "url": "https://github.com/kitconcept/volto-dsgvo-banner/issues"
-  },
-  "homepage": "https://github.com/kitconcept/volto-dsgvo-banner#readme",
-  "prettier": {
-    "trailingComma": "all",
-    "singleQuote": true,
-    "useTabs": false,
-    "overrides": [
-      {
-        "files": "*.overrides",
-        "options": {
-          "parser": "less"
-        }
-      }
-    ]
-  },
-  "stylelint": {
-    "extends": [
-      "stylelint-config-idiomatic-order"
-    ],
-    "plugins": [
-      "stylelint-prettier"
-    ],
-    "overrides": [
-      {
-        "files": [
-          "**/*.less"
-        ],
-        "customSyntax": "postcss-less"
-      },
-      {
-        "files": [
-          "**/*.overrides"
-        ],
-        "customSyntax": "postcss-less"
-      }
-    ],
-    "rules": {
-      "prettier/prettier": true,
-      "rule-empty-line-before": [
-        "always-multi-line",
-        {
-          "except": [
-            "first-nested"
-          ],
-          "ignore": [
-            "after-comment"
-          ]
-        }
-      ]
-    }
+    "preinstall": "npx only-allow pnpm",
+    "start": "VOLTOCONFIG=$(pwd)/volto.config.js pnpm --filter @plone/volto start",
+    "start:prod": "pnpm --filter @plone/volto start:prod",
+    "build": "VOLTOCONFIG=$(pwd)/volto.config.js pnpm --filter @plone/volto build",
+    "build:deps": "pnpm --filter @plone/registry --filter @plone/components build",
+    "i18n": "pnpm --filter @kitconcept/volto-dsgvo-banner i18n && VOLTOCONFIG=$(pwd)/volto.config.js pnpm --filter @plone/volto i18n",
+    "test": "RAZZLE_JEST_CONFIG=$(pwd)/jest-addon.config.js pnpm --filter @plone/volto test -- --passWithNoTests",
+    "lint": "VOLTOCONFIG=$(pwd)/volto.config.js eslint --max-warnings=0 'packages/**/src/**/*.{js,jsx,ts,tsx}'",
+    "lint:fix": "VOLTOCONFIG=$(pwd)/volto.config.js eslint --fix 'packages/**/src/**/*.{js,jsx,ts,tsx}'",
+    "prettier": "prettier --check 'packages/**/src/**/*.{js,jsx,ts,tsx}'",
+    "prettier:fix": "prettier --write 'packages/**/src/**/*.{js,jsx,ts,tsx}' ",
+    "stylelint": "stylelint 'packages/**/src/**/*.{css,scss,less}' --allow-empty-input",
+    "stylelint:fix": "stylelint 'packages/**/src/**/*.{css,scss,less}' --fix --allow-empty-input",
+    "dry-release": "pnpm --filter @kitconcept/volto-dsgvo-banner dry-release",
+    "release": "pnpm --filter @kitconcept/volto-dsgvo-banner release",
+    "release-major-alpha": "pnpm --filter @kitconcept/volto-dsgvo-banner release-major-alpha",
+    "release-alpha": "pnpm --filter @kitconcept/volto-dsgvo-banner release-alpha",
+    "storybook": "VOLTOCONFIG=$(pwd)/volto.config.js pnpm --filter @plone/volto storybook dev -p 6006 -c $(pwd)/.storybook",
+    "storybook-build": "VOLTOCONFIG=$(pwd)/volto.config.js pnpm --filter @plone/volto build-storybook -c $(pwd)/.storybook"
   },
   "dependencies": {
-    "@datapunt/matomo-tracker-js": "0.5.1",
-    "react-ga4": "^2.1.0"
+    "@plone/volto": "workspace:*",
+    "@plone/registry": "workspace:*",
+    "@kitconcept/volto-light-theme": "7.0.0-alpha.13",
+    "@kitconcept/volto-dsgvo-banner": "workspace:*"
   },
   "devDependencies": {
-    "@plone/scripts": "^3.0.0",
-    "release-it": "^16.1.3"
-  }
+    "mrs-developer": "^2.2.0"
+  },
+  "pnpm": {
+    "overrides": {
+      "@pmmmwh/react-refresh-webpack-plugin": "^0.5.15",
+      "react-refresh": "^0.14.2"
+    }
+  },
+  "packageManager": "pnpm@9.1.1"
 }
