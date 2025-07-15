@@ -8,6 +8,16 @@
 
 <!-- towncrier release notes start -->
 
+## 2.5.0 (2025-07-15)
+
+### Feature
+
+- Display overlay when the add-on conditions are not met. @Tishasoumya-02 [#43](https://github.com/kitconcept/volto-dsgvo-banner/issue/43)
+
+### Internal
+
+- New setup. @Tishasoumya-02 [#42](https://github.com/kitconcept/volto-dsgvo-banner/issue/42)
+
 ## 2.4.0 (2025-06-04)
 
 ### Feature
