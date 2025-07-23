@@ -8,6 +8,8 @@
 
 <!-- towncrier release notes start -->
 
+## 2.5.1 (2025-07-23)
+
 ## 2.5.0 (2025-07-15)
 
 ### Feature
