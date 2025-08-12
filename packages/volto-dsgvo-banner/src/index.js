@@ -27,8 +27,8 @@ const applyConfig = (config) => {
       gtagOptions: {},
     },
     modules: ['tracking', 'youtube', 'facebook', 'google'],
-    showBanner: false,
-    showOverlay: true,
+    showBanner: true,
+    showOverlay: false, //Need to replace IfConfirm with Overlay component in Maps/View.jsx etc.
     showTechnicallyRequired: true,
     cssClasses: {
       bannerAgreeButton: 'branded olive',
