@@ -25,7 +25,7 @@ const messages = defineMessages({
 
 const Banner = (props) => {
   const isClient = useClient();
-  
+
   let privacy_url = config.settings.DSGVOBanner.privacy_url;
   const modules = config.settings.DSGVOBanner.modules;
   const [cookies, setCookie, removeCookie] = useCookies();
