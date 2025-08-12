@@ -11,7 +11,6 @@ import { compose } from 'redux';
 import { withBlockExtensions } from '@plone/volto/helpers/Extensions';
 
 import { IfConfirm } from '../../../../../components';
-import Overlay from '../../../../../components/Overlay/Overlay';
 
 //If showOverlay=true in index.js, wrap the div  with the Overlay component instead of IfConfirm
 
