@@ -14,8 +14,6 @@ import cx from 'classnames';
 import { isInternalURL, flattenToAppURL } from '@plone/volto/helpers/Url/Url';
 import { IfConfirm } from '../../../../../components';
 
-//If using showOverlay, wrap the Embed component with the Overlay component instead of IfConfirm
-
 //Extracting videoID, listID and thumbnailURL from the video URL
 const getVideoIDAndPlaceholder = (url) => {
   let videoID = null;

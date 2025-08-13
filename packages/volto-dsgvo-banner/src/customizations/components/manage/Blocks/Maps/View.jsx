@@ -12,8 +12,6 @@ import { withBlockExtensions } from '@plone/volto/helpers/Extensions';
 
 import { IfConfirm } from '../../../../../components';
 
-//If showOverlay=true in index.js, wrap the div  with the Overlay component instead of IfConfirm
-
 /**
  * View image block class.
  * @class View
