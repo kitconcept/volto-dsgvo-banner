@@ -1,1 +1,1 @@
-Change settings for dsgvo banner, setting banner to default @Tishasoumya-02
+Change settings for dsgvo banner, setting banner to default, cause when the cookie expired the banner would'nt show with showOverlay set to true in config @Tishasoumya-02
