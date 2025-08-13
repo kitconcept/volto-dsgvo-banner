@@ -28,7 +28,6 @@ const applyConfig = (config) => {
     },
     modules: ['tracking', 'youtube', 'facebook', 'google'],
     showBanner: true,
-    showOverlay: false, //If true, need to replace IfConfirm with Overlay component in Maps/View.jsx etc.
     showTechnicallyRequired: true,
     cssClasses: {
       bannerAgreeButton: 'branded olive',
