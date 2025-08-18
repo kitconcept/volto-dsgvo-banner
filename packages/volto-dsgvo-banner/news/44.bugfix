@@ -1,0 +1,3 @@
+Fixed settings. @Tishasoumya-02
+* Change default of `showBanner` back to `true`. It was changed in version 2.5.0 but should not have been, because it was a breaking change.
+* Remove `showOverlay` setting. It was added in 2.5.0 but didn't do anything.

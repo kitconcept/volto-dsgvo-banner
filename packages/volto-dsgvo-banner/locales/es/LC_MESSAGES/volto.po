@@ -1,5 +1,3 @@
-# Translation of volto.pot to Spanish
-# Leonardo J. Caballero G. <leonardocaballero@gmail.com>, 2023.
 msgid ""
 msgstr ""
 "Project-Id-Version: Plone\n"
@@ -9,10 +7,10 @@ msgstr ""
 "Last-Translator: Leonardo J. Caballero G. <leonardocaballero@gmail.com>\n"
 "Language: es\n"
 "Language-Team: ES <LL@li.org>\n"
-"Preferred-Encodings: utf-8\n"
 "Content-Type: text/plain; charset=utf-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=(n != 1);\n"
+"Preferred-Encodings: utf-8\n"
 "MIME-Version: 1.0\n"
 "Language-Code: es\n"
 "Language-Name: Español\n"
@@ -20,72 +18,85 @@ msgstr ""
 "X-Is-Fallback-For: es-ar es-bo es-cl es-co es-cr es-do es-ec es-es es-sv es-gt es-hn es-mx es-ni es-pa es-py es-pe es-pr es-us es-uy es-ve\n"
 "X-Generator: Poedit 2.2.1\n"
 
-# defaultMessage: Adjust privacy settings
+#. Default: "Adjust privacy settings"
 #: components/Banner/Banner
 msgid "Adjust privacy settings"
 msgstr "Ajustar la configuración de privacidad"
 
-# defaultMessage: Agree to all cookies
+#. Default: "Agree to all cookies"
 #: components/Banner/Banner
 msgid "Agree to all cookies"
 msgstr "Aceptar todas las cookies"
 
-# defaultMessage: Back
+#. Default: "Allow and Continue"
+#: components/IfConfirm/IfConfirm
+msgid "Allow and Continue"
+msgstr ""
+
+#. Default: "Back"
 #: components/Banner/Banner
 msgid "Back"
 msgstr "Atrás"
 
-# defaultMessage: Customize Privacy Settings
+#. Default: "Customize Privacy Settings"
 #: components/IfConfirm/IfConfirm
 msgid "Customize Privacy Settings"
 msgstr "Personalizar la configuración de privacidad"
 
-# defaultMessage: Privacy Notice
+#. Default: "Privacy Notice"
 #: components/Banner/Banner
 msgid "Privacy Notice"
 msgstr "Aviso de Privacidad"
 
-# defaultMessage: Privacy Policy
+#. Default: "Privacy Notice Change"
+#: components/Banner/Banner
+msgid "Privacy Notice Change"
+msgstr ""
+
+#. Default: "Privacy Policy"
 #: components/Banner/Banner
 msgid "Privacy Policy"
 msgstr "Política de Privacidad"
 
-# defaultMessage: Save
-#: components/Banner/Banner components/Block/View
+#. Default: "Save"
+#: components/Banner/Banner
+#: components/Block/View
 msgid "Save"
 msgstr "Guardar"
 
-# defaultMessage: Technically required
-#: components/Banner/Banner components/Block/View
+#. Default: "Technically required"
+#: components/Banner/Banner
+#: components/Block/View
 msgid "Technically required"
 msgstr "Requerido técnicamente"
 
-# defaultMessage: To give you the best possible user experience, we use cookies on our website. Cookies required for the operation of the site are set automatically. You can also allow other cookies. You can {agree_all_cookies} or {adjust_privacy_settings}.
+#. Default: "To give you the best possible user experience, we use cookies on our website. Cookies required for the operation of the site are set automatically. You can also allow other cookies. You can {agree_all_cookies} or {adjust_privacy_settings}."
 #: components/Banner/Banner
 msgid "To give you the best possible user experience, we use cookies on our website. Cookies required for the operation of the site are set automatically. You can also allow other cookies. You can {agree_all_cookies} or {adjust_privacy_settings}."
 msgstr "Para brindarle la mejor experiencia de usuario posible, utilizamos cookies en nuestro sitio web. Las cookies necesarias para el funcionamiento del sitio se configuran automáticamente. También puede permitir otras cookies. Puede aceptar {agree_all_cookies} or {adjust_privacy_settings}."
 
-# defaultMessage: Tracking
-#: components/Banner/Banner components/Block/View
+#. Default: "Tracking"
+#: components/Banner/Banner
+#: components/Block/View
 msgid "Tracking"
 msgstr "Seguimiento"
 
-# defaultMessage: You can find more information on the used cookies and how you can subsequently revoke your consent in our
+#. Default: "You can find more information on the used cookies and how you can subsequently revoke your consent in our"
 #: components/Banner/Banner
 msgid "You can find more information on the used cookies and how you can subsequently revoke your consent in our"
 msgstr "Puede encontrar más información sobre las cookies utilizadas y cómo puede revocar su consentimiento posteriormente en nuestro"
 
-# defaultMessage: You can not view this content at this moment because you have selected to disable {module} cookies in the privacy settings.
-#: components/IfConfirm/IfConfirm
-msgid "You can not view this content at this moment because you have selected to disable {module} cookies in the privacy settings."
-msgstr "No puede ver este contenido en este momento porque ha seleccionado deshabilitar las cookies de {module} en la configuración de privacidad."
-
-# defaultMessage: adjust the privacy settings
+#. Default: "adjust the privacy settings"
 #: components/Banner/Banner
 msgid "adjust the privacy settings"
 msgstr "ajustar la configuración de privacidad"
 
-# defaultMessage: agree to all cookies
+#. Default: "agree to all cookies"
 #: components/Banner/Banner
 msgid "agree to all cookies"
 msgstr "aceptar todas las cookies"
+
+#. Default: "This content is provided by a third-party service. To view it, please allow cookies for {module} in your privacy settings."
+#: components/IfConfirm/IfConfirm
+msgid "dsgvoOverlayMessage"
+msgstr "No puede ver este contenido en este momento porque ha seleccionado deshabilitar las cookies de {module} en la configuración de privacidad."

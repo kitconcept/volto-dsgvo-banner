@@ -9,7 +9,7 @@ import { useIntl, defineMessages, FormattedMessage } from 'react-intl';
 import Google from './Google';
 import Matomo from './Matomo';
 import BodyClass from '@plone/volto/helpers/BodyClass/BodyClass';
-
+import { useClient } from '@plone/volto/hooks/client/useClient';
 import { hideDSGVOBanner } from '../../actions';
 
 const messages = defineMessages({
@@ -24,6 +24,8 @@ const messages = defineMessages({
 });
 
 const Banner = (props) => {
+  const isClient = useClient();
+
   let privacy_url = config.settings.DSGVOBanner.privacy_url;
   const modules = config.settings.DSGVOBanner.modules;
   const [cookies, setCookie, removeCookie] = useCookies();
@@ -34,9 +36,10 @@ const Banner = (props) => {
     config.settings.DSGVOBanner.cssClasses.bannerAgreeButton;
   const bannerAdjustButton =
     config.settings.DSGVOBanner.cssClasses.bannerAdjustButton;
-  const showConfirmModal = config.settings.DSGVOBanner.showBanner
-    ? !Number(cookies.confirm_cookies) || props.show
-    : props.show;
+  const showConfirmModal =
+    isClient && config.settings.DSGVOBanner.showBanner
+      ? !Number(cookies.confirm_cookies) || props.show
+      : props.show;
 
   const intl = useIntl();
 

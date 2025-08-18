@@ -16,75 +16,85 @@ msgstr ""
 "Preferred-Encodings: utf-8 latin1\n"
 "X-Is-Fallback-For: de-at de-li de-lu de-ch de-de\n"
 
+#. Default: "Adjust privacy settings"
 #: components/Banner/Banner
-# defaultMessage: Adjust privacy settings
 msgid "Adjust privacy settings"
 msgstr "Datenschutzeinstellungen anpassen"
 
+#. Default: "Agree to all cookies"
 #: components/Banner/Banner
-# defaultMessage: Agree to all cookies
 msgid "Agree to all cookies"
 msgstr "Allen Cookies zustimmen"
 
+#. Default: "Allow and Continue"
+#: components/IfConfirm/IfConfirm
+msgid "Allow and Continue"
+msgstr ""
+
+#. Default: "Back"
 #: components/Banner/Banner
-# defaultMessage: Back
 msgid "Back"
 msgstr "Zurück"
 
+#. Default: "Customize Privacy Settings"
 #: components/IfConfirm/IfConfirm
-# defaultMessage: Customize Privacy Settings
 msgid "Customize Privacy Settings"
 msgstr "Datenschutzeinstellungen anpassen"
 
+#. Default: "Privacy Notice"
 #: components/Banner/Banner
-# defaultMessage: Privacy Notice
 msgid "Privacy Notice"
 msgstr "Datenschutzhinweis"
 
+#. Default: "Privacy Notice Change"
 #: components/Banner/Banner
-# defaultMessage: Privacy Policy
+msgid "Privacy Notice Change"
+msgstr ""
+
+#. Default: "Privacy Policy"
+#: components/Banner/Banner
 msgid "Privacy Policy"
 msgstr "Datenschutzerklärung"
 
+#. Default: "Save"
 #: components/Banner/Banner
 #: components/Block/View
-# defaultMessage: Save
 msgid "Save"
 msgstr "Speichern"
 
+#. Default: "Technically required"
 #: components/Banner/Banner
 #: components/Block/View
-# defaultMessage: Technically required
 msgid "Technically required"
 msgstr "Technisch notwendig"
 
+#. Default: "To give you the best possible user experience, we use cookies on our website. Cookies required for the operation of the site are set automatically. You can also allow other cookies. You can {agree_all_cookies} or {adjust_privacy_settings}."
 #: components/Banner/Banner
-# defaultMessage: To give you the best possible user experience, we use cookies on our website. Cookies required for the operation of the site are set automatically. You can also allow other cookies. You can {agree_all_cookies} or {adjust_privacy_settings}.
 msgid "To give you the best possible user experience, we use cookies on our website. Cookies required for the operation of the site are set automatically. You can also allow other cookies. You can {agree_all_cookies} or {adjust_privacy_settings}."
 msgstr "Um Ihnen die bestmögliche Nutzererfahrung zu ermöglichen, verwenden wir auf unserer Webseite Cookies. Für den Betrieb der Seite notwendige Cookies werden automatisch gesetzt. Darüber hinaus können Sie weitere Cookies zulassen. Sie können {agree_all_cookies} oder die {adjust_privacy_settings}."
 
+#. Default: "Tracking"
 #: components/Banner/Banner
 #: components/Block/View
-# defaultMessage: Tracking
 msgid "Tracking"
 msgstr "Tracking"
 
+#. Default: "You can find more information on the used cookies and how you can subsequently revoke your consent in our"
 #: components/Banner/Banner
-# defaultMessage: You can find more information on the used cookies and how you can subsequently revoke your consent in our
 msgid "You can find more information on the used cookies and how you can subsequently revoke your consent in our"
 msgstr "Weitere Informationen zu den verwendeten Cookies und wie Sie Ihre Einwilligung später jederzeit wiederrufen können finden Sie in unserer"
 
-#: components/IfConfirm/IfConfirm
-# defaultMessage: You can not view this content at this moment because you have selected to disable {module} cookies in the privacy settings.
-msgid "You can not view this content at this moment because you have selected to disable {module} cookies in the privacy settings."
-msgstr "Sie können diesen Inhalt derzeit nicht anzeigen, da Sie {module}-Cookies in den Datenschutzeinstellungen deaktiviert haben."
-
+#. Default: "adjust the privacy settings"
 #: components/Banner/Banner
-# defaultMessage: adjust the privacy settings
 msgid "adjust the privacy settings"
 msgstr "Datenschutzeinstellungen anpassen"
 
+#. Default: "agree to all cookies"
 #: components/Banner/Banner
-# defaultMessage: agree to all cookies
 msgid "agree to all cookies"
 msgstr "allen Cookies zustimmen"
+
+#. Default: "This content is provided by a third-party service. To view it, please allow cookies for {module} in your privacy settings."
+#: components/IfConfirm/IfConfirm
+msgid "dsgvoOverlayMessage"
+msgstr "Sie können diesen Inhalt derzeit nicht anzeigen, da Sie {module}-Cookies in den Datenschutzeinstellungen deaktiviert haben."

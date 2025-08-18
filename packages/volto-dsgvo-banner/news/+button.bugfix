@@ -1,0 +1,1 @@
+If `showBanner` is false, the button in the `IfConfirm` component now accepts the cookie immediately instead of opening the banner. @Tishasoumya-02
