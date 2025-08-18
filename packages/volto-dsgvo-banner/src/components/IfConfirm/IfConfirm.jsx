@@ -27,7 +27,7 @@ const IfConfirm = ({ children, module, showDSGVOBanner }) => {
         <Message>
           <p>
             <FormattedMessage
-              id="This content is provided by a third-party service. To view it, please allow cookies for {module} in your privacy settings."
+              id="dsgvoOverlayMessage"
               defaultMessage="This content is provided by a third-party service. To view it, please allow cookies for {module} in your privacy settings."
               values={{
                 module: <b>{module}</b>,

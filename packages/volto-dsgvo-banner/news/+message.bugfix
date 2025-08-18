@@ -1,0 +1,1 @@
+Updated the message shown in the `IfConfirm` component so that it makes sense even if the user hasn't seen the banner yet. @Tishasoumya-02

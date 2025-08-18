@@ -27,7 +27,10 @@ const applyConfig = (config) => {
       gtagOptions: {},
     },
     modules: ['tracking', 'youtube', 'facebook', 'google'],
-    showBanner: true, // if false - show the overlay instead of banner
+    // If showBanner is true, the user is prompted to accept cookies
+    // when they first visit the site. If false, they don't have a chance
+    // to accept cookies until they see a block where they are needed.
+    showBanner: true,
     showTechnicallyRequired: true,
     cssClasses: {
       bannerAgreeButton: 'branded olive',

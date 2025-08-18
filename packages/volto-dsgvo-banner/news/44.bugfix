@@ -1,1 +1,3 @@
-Change settings for dsgvo banner, setting banner to default, cause when the cookie expired the banner would'nt show with showOverlay set to true in config. Remove Overlay component and showOverlay setting from config as it was redundant @Tishasoumya-02
+Fixed settings. @Tishasoumya-02
+* Change default of `showBanner` back to `true`. It was changed in version 2.5.0 but should not have been, because it was a breaking change.
+* Remove `showOverlay` setting. It was added in 2.5.0 but didn't do anything.
