@@ -27,7 +27,7 @@ const applyConfig = (config) => {
       gtagOptions: {},
     },
     modules: ['tracking', 'youtube', 'facebook', 'google'],
-    showBanner: true,
+    showBanner: true, // if false - show the overlay instead of banner
     showTechnicallyRequired: true,
     cssClasses: {
       bannerAgreeButton: 'branded olive',
