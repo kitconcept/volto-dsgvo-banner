@@ -1,1 +1,0 @@
-Fixed possible error during hydration by not rendering the DSGVO banner on the server. @Tishasoumya-02

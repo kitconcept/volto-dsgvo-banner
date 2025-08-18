@@ -8,6 +8,17 @@
 
 <!-- towncrier release notes start -->
 
+## 2.5.2 (2025-08-18)
+
+### Bugfix
+
+- Fixed settings. @Tishasoumya-02
+  * Change default of `showBanner` back to `true`. It was changed in version 2.5.0 but should not have been, because it was a breaking change.
+  * Remove `showOverlay` setting. It was added in 2.5.0 but didn't do anything. [#44](https://github.com/kitconcept/volto-dsgvo-banner/issue/44)
+- Fixed possible error during hydration by not rendering the DSGVO banner on the server. @Tishasoumya-02 
+- If `showBanner` is false, the button in the `IfConfirm` component now accepts the cookie immediately instead of opening the banner. @Tishasoumya-02 
+- Updated the message shown in the `IfConfirm` component so that it makes sense even if the user hasn't seen the banner yet. @Tishasoumya-02 
+
 ## 2.5.1 (2025-07-23)
 
 ## 2.5.0 (2025-07-15)
