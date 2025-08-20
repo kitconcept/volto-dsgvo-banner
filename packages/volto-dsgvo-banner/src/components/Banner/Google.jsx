@@ -5,7 +5,7 @@ import { injectLazyLibs } from '@plone/volto/helpers/Loadable/Loadable';
 import config from '@plone/volto/registry';
 
 const Google = ({ reactGa }) => {
-  const [cookies, removeCookie] = useCookies();
+  const [cookies, , removeCookie] = useCookies();
   const location = useLocation();
   const confirmTracking = !!Number(cookies.confirm_tracking);
 
