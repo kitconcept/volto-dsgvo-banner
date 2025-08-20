@@ -56,6 +56,11 @@ msgstr ""
 msgid "Privacy Policy"
 msgstr "Datenschutzerklärung"
 
+#. Default: "Reject all cookies"
+#: components/Banner/Banner
+msgid "Reject all cookies"
+msgstr ""
+
 #. Default: "Save"
 #: components/Banner/Banner
 #: components/Block/View
