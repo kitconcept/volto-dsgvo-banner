@@ -24,7 +24,7 @@ msgstr "Aceitar todos os cookies"
 #. Default: "Allow and Continue"
 #: components/IfConfirm/IfConfirm
 msgid "Allow and Continue"
-msgstr ""
+msgstr "Aceitar e continuar"
 
 #. Default: "Back"
 #: components/Banner/Banner
@@ -44,7 +44,7 @@ msgstr "Aviso de Privacidade"
 #. Default: "Privacy Notice Change"
 #: components/Banner/Banner
 msgid "Privacy Notice Change"
-msgstr ""
+msgstr "Alteração do Aviso de Privacidade"
 
 #. Default: "Privacy Policy"
 #: components/Banner/Banner
@@ -54,7 +54,7 @@ msgstr "Políticas de Privacidade"
 #. Default: "Reject all cookies"
 #: components/Banner/Banner
 msgid "Reject all cookies"
-msgstr ""
+msgstr "Rejeitar todos os cookies"
 
 #. Default: "Save"
 #: components/Banner/Banner
