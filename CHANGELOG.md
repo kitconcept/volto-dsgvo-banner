@@ -8,6 +8,17 @@
 
 <!-- towncrier release notes start -->
 
+## 3.0.0 (2025-08-26)
+
+### Breaking
+
+- Add reject button @rboixaderg [#46](https://github.com/kitconcept/volto-dsgvo-banner/issue/46)
+
+### Feature
+
+- Update Dutch/Flemish translations. @fredvd [#48](https://github.com/kitconcept/volto-dsgvo-banner/issue/48)
+- Update Brazilian Portuguese translations. @ericof 
+
 ## 2.5.2 (2025-08-18)
 
 ### Bugfix
