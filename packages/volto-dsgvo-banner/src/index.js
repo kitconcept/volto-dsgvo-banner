@@ -35,6 +35,7 @@ const applyConfig = (config) => {
     cssClasses: {
       bannerAgreeButton: 'branded olive',
       bannerAdjustButton: 'branded blue',
+      bannerRejectButton: 'branded olive',
     },
     privacy_url: '/privacy',
     ...(config.settings.DSGVOBanner || {}),

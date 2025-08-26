@@ -32,6 +32,8 @@ const Banner = (props) => {
   const [configureCookies, setConfigureCookies] = useState(false);
   const showTechnicallyRequired =
     config.settings.DSGVOBanner.showTechnicallyRequired;
+  const bannerRejectButton =
+    config.settings.DSGVOBanner.cssClasses.bannerRejectButton;
   const bannerAgreeButton =
     config.settings.DSGVOBanner.cssClasses.bannerAgreeButton;
   const bannerAdjustButton =
@@ -76,13 +78,8 @@ const Banner = (props) => {
 
     if (confirmTracking) {
       setCookie('confirm_tracking', 1, options);
-      window[`ga-disable-${config.settings.DSGVOBanner.trackingId}`] = false;
     } else {
       removeCookie('confirm_tracking', options);
-      window[`ga-disable-${config.settings.DSGVOBanner.trackingId}`] = true;
-      removeCookie('_ga', options);
-      removeCookie('_gat', options);
-      removeCookie('_gid', options);
     }
 
     if (confirmFacebook) {
@@ -120,12 +117,23 @@ const Banner = (props) => {
 
   const confirmAll = () => {
     setCookie('confirm_tracking', 1, options);
-    window[`ga-disable-${config.settings.DSGVOBanner.trackingId}`] = false;
     setCookie('confirm_facebook', 1, options);
     setCookie('confirm_youtube', 1, options);
     setCookie('confirm_google', 1, options);
     setCookie('confirm_twitter', 1, options);
     setCookie('confirm_vimeo', 1, options);
+
+    setCookie('confirm_cookies', 1, options);
+    props.hideDSGVOBanner();
+  };
+
+  const rejectAll = () => {
+    setCookie('confirm_tracking', 0, options);
+    setCookie('confirm_facebook', 0, options);
+    setCookie('confirm_youtube', 0, options);
+    setCookie('confirm_google', 0, options);
+    setCookie('confirm_twitter', 0, options);
+    setCookie('confirm_vimeo', 0, options);
 
     setCookie('confirm_cookies', 1, options);
     props.hideDSGVOBanner();
@@ -208,6 +216,15 @@ const Banner = (props) => {
                 <FormattedMessage
                   id="Agree to all cookies"
                   defaultMessage="Agree to all cookies"
+                />
+              </Button>
+              <Button
+                className={bannerRejectButton}
+                onClick={() => rejectAll()}
+              >
+                <FormattedMessage
+                  id="Reject all cookies"
+                  defaultMessage="Reject all cookies"
                 />
               </Button>
               {modules.length > 0 && (
@@ -312,6 +329,15 @@ const Banner = (props) => {
               >
                 {'< '}
                 <FormattedMessage id="Back" defaultMessage="Back" />
+              </Button>
+              <Button
+                className={bannerRejectButton}
+                onClick={() => rejectAll()}
+              >
+                <FormattedMessage
+                  id="Reject all cookies"
+                  defaultMessage="Reject all cookies"
+                />
               </Button>
               <Button
                 className={bannerAgreeButton}

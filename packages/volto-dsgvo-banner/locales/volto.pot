@@ -1,7 +1,7 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: Plone\n"
-"POT-Creation-Date: 2025-08-18T17:41:57.394Z\n"
+"POT-Creation-Date: 2025-08-20T07:59:19.611Z\n"
 "Last-Translator: Plone i18n <plone-i18n@lists.sourceforge.net>\n"
 "Language-Team: Plone i18n <plone-i18n@lists.sourceforge.net>\n"
 "Content-Type: text/plain; charset=utf-8\n"
@@ -51,6 +51,11 @@ msgstr ""
 #. Default: "Privacy Policy"
 #: components/Banner/Banner
 msgid "Privacy Policy"
+msgstr ""
+
+#. Default: "Reject all cookies"
+#: components/Banner/Banner
+msgid "Reject all cookies"
 msgstr ""
 
 #. Default: "Save"

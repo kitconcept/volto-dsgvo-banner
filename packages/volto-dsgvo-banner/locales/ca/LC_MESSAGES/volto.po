@@ -28,7 +28,7 @@ msgstr "Acceptar totes les galetes"
 #. Default: "Allow and Continue"
 #: components/IfConfirm/IfConfirm
 msgid "Allow and Continue"
-msgstr ""
+msgstr "Acceptar i continuar"
 
 #. Default: "Back"
 #: components/Banner/Banner
@@ -48,12 +48,17 @@ msgstr "Avís de Privacitat"
 #. Default: "Privacy Notice Change"
 #: components/Banner/Banner
 msgid "Privacy Notice Change"
-msgstr ""
+msgstr "Canvi en l'avís de privacitat"
 
 #. Default: "Privacy Policy"
 #: components/Banner/Banner
 msgid "Privacy Policy"
 msgstr "Política de Privacitat"
+
+#. Default: "Reject all cookies"
+#: components/Banner/Banner
+msgid "Reject all cookies"
+msgstr "Rebutjar totes les galetes"
 
 #. Default: "Save"
 #: components/Banner/Banner
