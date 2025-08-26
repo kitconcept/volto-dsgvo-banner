@@ -28,7 +28,7 @@ msgstr "Alle cookies toestaan"
 #. Default: "Allow and Continue"
 #: components/IfConfirm/IfConfirm
 msgid "Allow and Continue"
-msgstr ""
+msgstr "Akkoord en doorgaan"
 
 #. Default: "Back"
 #: components/Banner/Banner
@@ -48,7 +48,7 @@ msgstr "Privacyverklaring"
 #. Default: "Privacy Notice Change"
 #: components/Banner/Banner
 msgid "Privacy Notice Change"
-msgstr ""
+msgstr "Privacy-instellingen"
 
 #. Default: "Privacy Policy"
 #: components/Banner/Banner
@@ -58,7 +58,7 @@ msgstr "Privacybeleid"
 #. Default: "Reject all cookies"
 #: components/Banner/Banner
 msgid "Reject all cookies"
-msgstr ""
+msgstr "Weiger alle cookies"
 
 #. Default: "Save"
 #: components/Banner/Banner
