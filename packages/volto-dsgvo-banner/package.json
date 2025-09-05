@@ -26,9 +26,6 @@
     "release-major-alpha": "release-it major --preRelease=alpha",
     "release-alpha": "release-it --preRelease=alpha"
   },
-  "addons": [
-    "@kitconcept/volto-light-theme"
-  ],
   "dependencies": {
     "@datapunt/matomo-tracker-js": "0.5.1",
     "react-ga4": "^2.1.0"
