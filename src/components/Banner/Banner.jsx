@@ -164,20 +164,20 @@ const Banner = (props) => {
                   defaultMessage="To give you the best possible user experience, we use cookies on our website. Cookies required for the operation of the site are set automatically. You can also allow other cookies. You can {agree_all_cookies} or {adjust_privacy_settings}."
                   values={{
                     agree_all_cookies: (
-                      <b>
+                      <span class="strong">
                         <FormattedMessage
                           id="agree to all cookies"
                           defaultMessage="agree to all cookies"
                         />
-                      </b>
+                      </span>
                     ),
                     adjust_privacy_settings: (
-                      <b>
+                      <span class="strong">
                         <FormattedMessage
                           id="adjust the privacy settings"
                           defaultMessage="adjust the privacy settings"
                         />
-                      </b>
+                      </span>
                     ),
                   }}
                 />
@@ -187,14 +187,14 @@ const Banner = (props) => {
                   id="You can find more information on the used cookies and how you can subsequently revoke your consent in our"
                   defaultMessage="You can find more information on the used cookies and how you can subsequently revoke your consent in our"
                 />{' '}
-                <b>
+                <span class="strong">
                   <Link to={privacy_url} onClick={confirmSelection}>
                     <FormattedMessage
                       id="Privacy Policy"
                       defaultMessage="Privacy Policy"
                     />
                   </Link>
-                </b>
+                </span>
                 .
               </p>
             </Modal.Content>
