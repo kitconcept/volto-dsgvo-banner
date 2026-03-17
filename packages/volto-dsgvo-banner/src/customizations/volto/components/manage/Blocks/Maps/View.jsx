@@ -10,7 +10,7 @@ import cx from 'classnames';
 import { compose } from 'redux';
 import { withBlockExtensions } from '@plone/volto/helpers/Extensions';
 
-import { IfConfirm } from '../../../../../components';
+import IfConfirm from '../../../../../../components/IfConfirm/IfConfirm';
 
 /**
  * View image block class.
@@ -19,6 +19,7 @@ import { IfConfirm } from '../../../../../components';
  */
 
 const View = ({ data, intl }) => (
+  // START CUSTOMIZATION
   <IfConfirm module="google">
     <div
       className={cx(
@@ -44,6 +45,7 @@ const View = ({ data, intl }) => (
       </div>
     </div>
   </IfConfirm>
+  // END CUSTOMIZATION
 );
 
 /**
