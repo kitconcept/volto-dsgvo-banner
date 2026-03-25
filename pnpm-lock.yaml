@@ -1503,7 +1503,7 @@ importers:
         version: 1.58.2
       react-intl-redux:
         specifier: 2.3.0
-        version: 2.3.0(@babel/runtime@7.28.6)(prop-types@15.8.1)(react-intl@3.12.1(react@18.2.0))(react-redux@8.1.2(@types/react-dom@18.3.7(@types/react@18.3.23))(@types/react@18.3.23)(react-dom@18.2.0(react@18.2.0))(react@18.2.0)(redux@4.2.1))(react@18.2.0)
+        version: 2.3.0(@babel/runtime@7.28.6)(prop-types@15.7.2)(react-intl@3.12.1(react@18.2.0))(react-redux@8.1.2(@types/react-dom@18.3.7(@types/react@18.3.23))(@types/react@18.3.23)(react-dom@18.2.0(react@18.2.0))(react@18.2.0)(redux@4.2.1))(react@18.2.0)
       redux-mock-store:
         specifier: 1.5.4
         version: 1.5.4
@@ -25628,14 +25628,6 @@ snapshots:
     dependencies:
       '@babel/runtime': 7.28.6
       prop-types: 15.7.2
-      react: 18.2.0
-      react-intl: 3.12.1(react@18.2.0)
-      react-redux: 8.1.2(@types/react-dom@18.3.7(@types/react@18.3.23))(@types/react@18.3.23)(react-dom@18.2.0(react@18.2.0))(react@18.2.0)(redux@4.2.1)
-
-  react-intl-redux@2.3.0(@babel/runtime@7.28.6)(prop-types@15.8.1)(react-intl@3.12.1(react@18.2.0))(react-redux@8.1.2(@types/react-dom@18.3.7(@types/react@18.3.23))(@types/react@18.3.23)(react-dom@18.2.0(react@18.2.0))(react@18.2.0)(redux@4.2.1))(react@18.2.0):
-    dependencies:
-      '@babel/runtime': 7.28.6
-      prop-types: 15.8.1
       react: 18.2.0
       react-intl: 3.12.1(react@18.2.0)
       react-redux: 8.1.2(@types/react-dom@18.3.7(@types/react@18.3.23))(@types/react@18.3.23)(react-dom@18.2.0(react@18.2.0))(react@18.2.0)(redux@4.2.1)
