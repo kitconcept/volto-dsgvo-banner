@@ -27,6 +27,7 @@
     "release-alpha": "release-it --preRelease=alpha"
   },
   "dependencies": {
+    "@kitconcept/volto-light-theme": "workspace:*",
     "@datapunt/matomo-tracker-js": "0.5.1",
     "react-ga4": "^2.1.0"
   },
