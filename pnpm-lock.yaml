@@ -12,9 +12,6 @@ importers:
 
   .:
     dependencies:
-      '@kitconcept/volto-bm3-compat':
-        specifier: workspace:*
-        version: link:packages/volto-bm3-compat/packages/volto-bm3-compat
       '@kitconcept/volto-dsgvo-banner':
         specifier: workspace:*
         version: link:packages/volto-dsgvo-banner
@@ -1388,9 +1385,6 @@ importers:
       '@datapunt/matomo-tracker-js':
         specifier: 0.5.1
         version: 0.5.1
-      '@kitconcept/volto-light-theme':
-        specifier: workspace:*
-        version: link:../volto-light-theme/frontend/packages/volto-light-theme
       react:
         specifier: 18.2.0
         version: 18.2.0
