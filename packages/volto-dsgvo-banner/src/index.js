@@ -32,7 +32,6 @@ const applyConfig = (config) => {
     // to accept cookies until they see a block where they are needed.
     showBanner: true,
     showTechnicallyRequired: true,
-    ci-trigger:true,
     cssClasses: {
       bannerAgreeButton: 'branded olive',
       bannerAdjustButton: 'branded blue',
