@@ -35,8 +35,9 @@
   "dependencies": {
     "@plone/volto": "workspace:*",
     "@plone/registry": "workspace:*",
-    "@kitconcept/volto-light-theme": "8.0.0-alpha.18",
-    "@kitconcept/volto-dsgvo-banner": "workspace:*"
+    "@kitconcept/volto-dsgvo-banner": "workspace:*",
+    "@kitconcept/volto-light-theme": "workspace:*",
+    "@kitconcept/volto-bm3-compat": "workspace:*"
   },
   "devDependencies": {
     "mrs-developer": "^2.2.0"
