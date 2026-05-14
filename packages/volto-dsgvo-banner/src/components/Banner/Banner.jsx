@@ -3,14 +3,14 @@ import { includes, isObject } from 'lodash';
 import { Button, Modal, Checkbox, Form } from 'semantic-ui-react';
 import { useCookies } from 'react-cookie';
 import { Link } from 'react-router-dom';
-import { connect, useSelector } from 'react-redux';
-import config from '@plone/volto/registry';
+import { connect } from 'react-redux';
 import { useIntl, defineMessages, FormattedMessage } from 'react-intl';
 import Google from './Google';
 import Matomo from './Matomo';
 import BodyClass from '@plone/volto/helpers/BodyClass/BodyClass';
 import { useClient } from '@plone/volto/hooks/client/useClient';
 import { hideDSGVOBanner } from '../../actions';
+import useSettings from '../useSettings';
 
 const messages = defineMessages({
   technically_required: {
@@ -25,28 +25,17 @@ const messages = defineMessages({
 
 const Banner = (props) => {
   const isClient = useClient();
-  // Use settings from kitconcept-website distribution control panel, if present.
-  const dsgvoSiteSettings = useSelector(
-    (state) => state.site?.data?.['kitconcept.website.dsgvo'],
-  );
+  const settings = useSettings();
 
-  let privacy_url = config.settings.DSGVOBanner.privacy_url;
-  const modules =
-    config.settings.DSGVOBanner.modules ?? dsgvoSiteSettings?.modules ?? [];
+  let privacy_url = settings.privacy_url;
+  const modules = settings.modules;
   const [cookies, setCookie, removeCookie] = useCookies();
   const [configureCookies, setConfigureCookies] = useState(false);
-  const showTechnicallyRequired =
-    config.settings.DSGVOBanner.showTechnicallyRequired;
-  const bannerRejectButton =
-    config.settings.DSGVOBanner.cssClasses.bannerRejectButton;
-  const bannerAgreeButton =
-    config.settings.DSGVOBanner.cssClasses.bannerAgreeButton;
-  const bannerAdjustButton =
-    config.settings.DSGVOBanner.cssClasses.bannerAdjustButton;
-  const showBanner =
-    config.settings.DSGVOBanner.showBanner ??
-    dsgvoSiteSettings?.show_banner ??
-    false;
+  const showTechnicallyRequired = settings.showTechnicallyRequired;
+  const bannerRejectButton = settings.cssClasses.bannerRejectButton;
+  const bannerAgreeButton = settings.cssClasses.bannerAgreeButton;
+  const bannerAdjustButton = settings.cssClasses.bannerAdjustButton;
+  const showBanner = settings.showBanner;
   const showConfirmModal =
     isClient && showBanner
       ? !Number(cookies.confirm_cookies) || props.show
@@ -157,8 +146,8 @@ const Banner = (props) => {
 
   return (
     <>
-      {config.settings.DSGVOBanner.tracker.type === 'google' && <Google />}
-      {config.settings.DSGVOBanner.tracker.type === 'matomo' && <Matomo />}
+      {settings.tracker.type === 'google' && <Google />}
+      {settings.tracker.type === 'matomo' && <Matomo />}
       <BodyClass className={showConfirmModal ? 'openCookieBanner' : ''} />
       <Modal
         id="question-landing"
