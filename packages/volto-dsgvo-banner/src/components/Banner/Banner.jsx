@@ -3,7 +3,7 @@ import { includes, isObject } from 'lodash';
 import { Button, Modal, Checkbox, Form } from 'semantic-ui-react';
 import { useCookies } from 'react-cookie';
 import { Link } from 'react-router-dom';
-import { connect } from 'react-redux';
+import { connect, useSelector } from 'react-redux';
 import config from '@plone/volto/registry';
 import { useIntl, defineMessages, FormattedMessage } from 'react-intl';
 import Google from './Google';
@@ -25,9 +25,13 @@ const messages = defineMessages({
 
 const Banner = (props) => {
   const isClient = useClient();
+  const dsgvoSiteSettings = useSelector(
+    (state) => state.site?.data?.['kitconcept.website.dsgvo'],
+  );
 
   let privacy_url = config.settings.DSGVOBanner.privacy_url;
-  const modules = config.settings.DSGVOBanner.modules;
+  const modules =
+    dsgvoSiteSettings?.modules ?? config.settings.DSGVOBanner.modules;
   const [cookies, setCookie, removeCookie] = useCookies();
   const [configureCookies, setConfigureCookies] = useState(false);
   const showTechnicallyRequired =
@@ -38,8 +42,10 @@ const Banner = (props) => {
     config.settings.DSGVOBanner.cssClasses.bannerAgreeButton;
   const bannerAdjustButton =
     config.settings.DSGVOBanner.cssClasses.bannerAdjustButton;
+  const showBanner =
+    dsgvoSiteSettings?.show_banner ?? config.settings.DSGVOBanner.showBanner;
   const showConfirmModal =
-    isClient && config.settings.DSGVOBanner.showBanner
+    isClient && showBanner
       ? !Number(cookies.confirm_cookies) || props.show
       : props.show;
 

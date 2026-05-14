@@ -1,0 +1,1 @@
+Use settings from k.website along with volto config setting to be backwards compatible. @Tishasoumya-02
