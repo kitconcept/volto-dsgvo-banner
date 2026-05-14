@@ -32,7 +32,7 @@ const Banner = (props) => {
 
   let privacy_url = config.settings.DSGVOBanner.privacy_url;
   const modules =
-    config.settings.DSGVOBanner.modules ?? dsgvoSiteSettings?.modules;
+    config.settings.DSGVOBanner.modules ?? dsgvoSiteSettings?.modules ?? [];
   const [cookies, setCookie, removeCookie] = useCookies();
   const [configureCookies, setConfigureCookies] = useState(false);
   const showTechnicallyRequired =
@@ -44,7 +44,9 @@ const Banner = (props) => {
   const bannerAdjustButton =
     config.settings.DSGVOBanner.cssClasses.bannerAdjustButton;
   const showBanner =
-    config.settings.DSGVOBanner.showBanner ?? dsgvoSiteSettings?.show_banner;
+    config.settings.DSGVOBanner.showBanner ??
+    dsgvoSiteSettings?.show_banner ??
+    false;
   const showConfirmModal =
     isClient && showBanner
       ? !Number(cookies.confirm_cookies) || props.show
