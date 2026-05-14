@@ -25,13 +25,14 @@ const messages = defineMessages({
 
 const Banner = (props) => {
   const isClient = useClient();
+  // Use settings from kitconcept-website distribution control panel, if present.
   const dsgvoSiteSettings = useSelector(
     (state) => state.site?.data?.['kitconcept.website.dsgvo'],
   );
 
   let privacy_url = config.settings.DSGVOBanner.privacy_url;
   const modules =
-    dsgvoSiteSettings?.modules ?? config.settings.DSGVOBanner.modules;
+    config.settings.DSGVOBanner.modules ?? dsgvoSiteSettings?.modules;
   const [cookies, setCookie, removeCookie] = useCookies();
   const [configureCookies, setConfigureCookies] = useState(false);
   const showTechnicallyRequired =
@@ -43,7 +44,7 @@ const Banner = (props) => {
   const bannerAdjustButton =
     config.settings.DSGVOBanner.cssClasses.bannerAdjustButton;
   const showBanner =
-    dsgvoSiteSettings?.show_banner ?? config.settings.DSGVOBanner.showBanner;
+    config.settings.DSGVOBanner.showBanner ?? dsgvoSiteSettings?.show_banner;
   const showConfirmModal =
     isClient && showBanner
       ? !Number(cookies.confirm_cookies) || props.show
