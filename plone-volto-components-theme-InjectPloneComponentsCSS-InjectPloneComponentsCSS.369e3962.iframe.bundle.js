@@ -1,0 +1,1 @@
+"use strict";(self.webpackChunk_plone_volto=self.webpackChunk_plone_volto||[]).push([[3928],{"./src/components/theme/InjectPloneComponentsCSS/InjectPloneComponentsCSS.tsx":function(__unused_webpack_module,__webpack_exports__,__webpack_require__){__webpack_require__.r(__webpack_exports__);__webpack_require__("../components/dist/basic.css");__webpack_exports__.default=()=>null}}]);
