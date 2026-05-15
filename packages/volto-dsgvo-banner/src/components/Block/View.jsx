@@ -2,7 +2,6 @@ import React, { useState, useEffect } from 'react';
 import { includes } from 'lodash';
 import { Checkbox, Form, Button } from 'semantic-ui-react';
 import { useCookies } from 'react-cookie';
-import config from '@plone/volto/registry';
 import { useIntl, defineMessages, FormattedMessage } from 'react-intl';
 import useSettings from '../useSettings';
 

@@ -12,7 +12,7 @@ const useSettings = () => {
       showBanner: dsgvoSiteSettings?.show_banner ?? false,
       modules: dsgvoSiteSettings?.modules ?? [],
     },
-    ...config.settings.DSGVOSettings,
+    ...config.settings.DSGVOBanner,
   };
 };
 
