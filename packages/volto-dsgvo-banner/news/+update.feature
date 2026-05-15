@@ -1,1 +1,0 @@
-Use settings from kitconcept-website control panel (if present). @Tishasoumya-02

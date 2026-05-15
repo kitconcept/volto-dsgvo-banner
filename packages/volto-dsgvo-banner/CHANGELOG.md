@@ -8,6 +8,20 @@
 
 <!-- towncrier release notes start -->
 
+## 4.0.0-alpha.0 (2026-05-15)
+
+### Breaking
+
+- Update latest VLT (8.0.0-alpha.18) and Volto core (19.0.0-alpha.27) @iRohitSingh [#53](https://github.com/kitconcept/volto-dsgvo-banner/issue/53)
+
+### Feature
+
+- Use settings from kitconcept-website control panel (if present). @Tishasoumya-02 
+
+### Internal
+
+- Use workspace dependency for VLT @iRohitSingh [#54](https://github.com/kitconcept/volto-dsgvo-banner/issue/54)
+
 ## 3.0.1 (2025-10-12)
 
 ### Bugfix
