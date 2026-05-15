@@ -2,8 +2,8 @@ import React, { useState, useEffect } from 'react';
 import { includes } from 'lodash';
 import { Checkbox, Form, Button } from 'semantic-ui-react';
 import { useCookies } from 'react-cookie';
-import config from '@plone/volto/registry';
 import { useIntl, defineMessages, FormattedMessage } from 'react-intl';
+import useSettings from '../useSettings';
 
 const messages = defineMessages({
   technically_required: {
@@ -17,11 +17,10 @@ const messages = defineMessages({
 });
 
 const View = (props) => {
-  const modules = config.settings.DSGVOBanner.modules;
-  const showTechnicallyRequired =
-    config.settings.DSGVOBanner.showTechnicallyRequired;
-  const bannerAgreeButton =
-    config.settings.DSGVOBanner.cssClasses.bannerAgreeButton;
+  const settings = useSettings();
+  const modules = settings.modules;
+  const showTechnicallyRequired = settings.showTechnicallyRequired;
+  const bannerAgreeButton = settings.cssClasses.bannerAgreeButton;
   const [cookies, setCookie, removeCookie] = useCookies();
   const intl = useIntl();
 
@@ -54,10 +53,10 @@ const View = (props) => {
 
     if (confirmTracking) {
       setCookie('confirm_tracking', 1, options);
-      window[`ga-disable-${config.settings.DSGVOBanner.trackingId}`] = false;
+      window[`ga-disable-${settings.trackingId}`] = false;
     } else {
       removeCookie('confirm_tracking', options);
-      window[`ga-disable-${config.settings.DSGVOBanner.trackingId}`] = true;
+      window[`ga-disable-${settings.trackingId}`] = true;
       removeCookie('_ga', options);
       removeCookie('_gat', options);
       removeCookie('_gid', options);
