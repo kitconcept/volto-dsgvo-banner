@@ -3,11 +3,11 @@ import { useCookies } from 'react-cookie';
 import { connect } from 'react-redux';
 import { FormattedMessage } from 'react-intl';
 import { showDSGVOBanner } from '../../actions';
-import config from '@plone/volto/registry';
+import useSettings from '../useSettings';
 
 const IfConfirm = ({ children, module, showDSGVOBanner }) => {
   const [cookies, setCookie] = useCookies();
-  const { showBanner } = config.settings.DSGVOBanner;
+  const { showBanner } = useSettings();
 
   const confirmModuleOverlay = () => {
     const expiryDate = new Date();
