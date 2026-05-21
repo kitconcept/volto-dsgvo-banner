@@ -10,7 +10,7 @@ import cx from 'classnames';
 import { compose } from 'redux';
 import { withBlockExtensions } from '@plone/volto/helpers/Extensions';
 import { defineMessages } from 'react-intl';
-import { IfConfirm } from '../../../../../components';
+import { IfConfirm } from '../../../../../../components';
 
 /**
  * Body map block class.
