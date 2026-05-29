@@ -1,0 +1,1 @@
+Customize Body component instead of View for Maps block & update Volto and VLT versions. @danalvrz
