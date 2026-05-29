@@ -8,6 +8,12 @@
 
 <!-- towncrier release notes start -->
 
+## 4.0.0-alpha.1 (2026-05-29)
+
+### Feature
+
+- Customize Body component instead of View for Maps block & update Volto and VLT versions. @danalvrz 
+
 ## 4.0.0-alpha.0 (2026-05-15)
 
 ### Breaking
