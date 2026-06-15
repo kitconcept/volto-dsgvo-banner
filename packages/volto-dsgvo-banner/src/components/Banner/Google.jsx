@@ -3,28 +3,38 @@ import { useCookies } from 'react-cookie';
 import { useLocation } from 'react-router-dom';
 import { injectLazyLibs } from '@plone/volto/helpers/Loadable/Loadable';
 import config from '@plone/volto/registry';
+import useSettings from '../useSettings';
 
 const Google = ({ reactGa }) => {
   const [cookies, , removeCookie] = useCookies();
   const location = useLocation();
   const confirmTracking = !!Number(cookies.confirm_tracking);
+  const settings = useSettings();
+
+  const trackingId =
+    settings.tracker.id ||
+    config.settings.DSGVOBanner.trackingId ||
+    config.settings.DSGVOBanner.tracker.id;
+  const gaOptions =
+    settings.tracker.gaOptions ||
+    config.settings.DSGVOBanner.tracker.gaOptions ||
+    {};
+  const gtagOptions =
+    settings.tracker.gtagOptions ||
+    config.settings.DSGVOBanner.tracker.gtagOptions ||
+    {};
 
   if (__CLIENT__) {
     reactGa.default.initialize([
       {
-        trackingId:
-          config.settings.DSGVOBanner.trackingId ||
-          config.settings.DSGVOBanner.tracker.id,
-        gaOptions: config.settings.DSGVOBanner.tracker.gaOptions || {},
-        gtagOptions: config.settings.DSGVOBanner.tracker.gtagOptions || {},
+        trackingId,
+        gaOptions,
+        gtagOptions,
       },
     ]);
   }
 
   useEffect(() => {
-    const trackingId =
-      config.settings.DSGVOBanner.trackingId ||
-      config.settings.DSGVOBanner.tracker.id;
     if (confirmTracking) {
       window[`ga-disable-${trackingId}`] = false;
     } else {
@@ -33,7 +43,7 @@ const Google = ({ reactGa }) => {
       removeCookie('_gat');
       removeCookie('_gid');
     }
-  }, [confirmTracking, removeCookie]);
+  }, [confirmTracking, removeCookie, trackingId]);
 
   useEffect(() => {
     if (confirmTracking) {
