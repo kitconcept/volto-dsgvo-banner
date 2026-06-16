@@ -2,7 +2,6 @@ import { useEffect } from 'react';
 import { useCookies } from 'react-cookie';
 import { useLocation } from 'react-router-dom';
 import { injectLazyLibs } from '@plone/volto/helpers/Loadable/Loadable';
-import config from '@plone/volto/registry';
 import useSettings from '../useSettings';
 
 const Google = ({ reactGa }) => {
@@ -11,18 +10,9 @@ const Google = ({ reactGa }) => {
   const confirmTracking = !!Number(cookies.confirm_tracking);
   const settings = useSettings();
 
-  const trackingId =
-    settings.tracker.id ||
-    config.settings.DSGVOBanner.trackingId ||
-    config.settings.DSGVOBanner.tracker.id;
-  const gaOptions =
-    settings.tracker.gaOptions ||
-    config.settings.DSGVOBanner.tracker.gaOptions ||
-    {};
-  const gtagOptions =
-    settings.tracker.gtagOptions ||
-    config.settings.DSGVOBanner.tracker.gtagOptions ||
-    {};
+  const trackingId = settings.tracker.id;
+  const gaOptions = settings.tracker.gaOptions || {};
+  const gtagOptions = settings.tracker.gtagOptions || {};
 
   if (__CLIENT__) {
     reactGa.default.initialize([

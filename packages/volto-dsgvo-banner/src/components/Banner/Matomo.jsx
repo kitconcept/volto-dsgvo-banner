@@ -1,6 +1,5 @@
 import { useEffect } from 'react';
 import { useCookies } from 'react-cookie';
-import config from '@plone/volto/registry';
 import { injectLazyLibs } from '@plone/volto/helpers/Loadable/Loadable';
 import useSettings from '../useSettings';
 
@@ -12,9 +11,8 @@ const Matomo = ({ matomoTracker }) => {
 
   if (__CLIENT__) {
     tracker = new matomoTracker.default({
-      urlBase:
-        settings.tracker.urlBase || config.settings.DSGVOBanner.tracker.urlBase,
-      siteId: settings.tracker.id || config.settings.DSGVOBanner.tracker.id,
+      urlBase: settings.tracker.urlBase,
+      siteId: settings.tracker.id,
     });
   }
 
