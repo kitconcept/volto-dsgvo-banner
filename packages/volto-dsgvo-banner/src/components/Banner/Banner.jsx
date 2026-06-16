@@ -8,6 +8,7 @@ import { useIntl, defineMessages, FormattedMessage } from 'react-intl';
 import Google from './Google';
 import Matomo from './Matomo';
 import BodyClass from '@plone/volto/helpers/BodyClass/BodyClass';
+import { flattenToAppURL } from '@plone/volto/helpers/Url/Url';
 import { useClient } from '@plone/volto/hooks/client/useClient';
 import { hideDSGVOBanner } from '../../actions';
 import useSettings from '../useSettings';
@@ -46,6 +47,7 @@ const Banner = (props) => {
   if (isObject(privacy_url)) {
     privacy_url = privacy_url[intl.locale];
   }
+  privacy_url = privacy_url ? flattenToAppURL(privacy_url) : privacy_url;
   const [confirmTracking, setConfirmTracking] = useState(
     !!Number(cookies.confirm_tracking),
   );
