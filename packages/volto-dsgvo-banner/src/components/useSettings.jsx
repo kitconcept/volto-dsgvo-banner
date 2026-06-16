@@ -8,25 +8,15 @@ const useSettings = () => {
   );
 
   const settings = {
-    // Use settings from kitconcept-website distribution control panel, if present.
-    ...{
-      showBanner: dsgvoSiteSettings?.show_banner ?? false,
-      modules: dsgvoSiteSettings?.modules ?? [],
+    showBanner: dsgvoSiteSettings?.show_banner ?? false,
+    modules: dsgvoSiteSettings?.modules ?? [],
+    tracker: {
+      type: dsgvoSiteSettings?.tracker ?? '',
+      ...(dsgvoSiteSettings?.tracker_options ?? {}),
     },
+    privacy_url: dsgvoSiteSettings?.privacy_url ?? '',
     ...config.settings.DSGVOBanner,
   };
-
-  if (dsgvoSiteSettings?.tracker) {
-    settings.tracker = {
-      ...settings.tracker,
-      type: dsgvoSiteSettings.tracker,
-      ...(dsgvoSiteSettings.tracker_options ?? {}),
-    };
-  }
-
-  if (dsgvoSiteSettings?.privacy_url) {
-    settings.privacy_url = dsgvoSiteSettings.privacy_url;
-  }
 
   return settings;
 };
