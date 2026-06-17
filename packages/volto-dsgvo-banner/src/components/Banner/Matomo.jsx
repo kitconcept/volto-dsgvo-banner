@@ -11,8 +11,8 @@ const Matomo = ({ matomoTracker }) => {
 
   if (__CLIENT__) {
     tracker = new matomoTracker.default({
-      urlBase: settings.tracker.urlBase,
-      siteId: settings.tracker.id,
+      urlBase: settings.tracker?.urlBase,
+      siteId: settings.tracker?.id,
     });
   }
 

@@ -10,9 +10,9 @@ const Google = ({ reactGa }) => {
   const confirmTracking = !!Number(cookies.confirm_tracking);
   const settings = useSettings();
 
-  const trackingId = settings.tracker.id;
-  const gaOptions = settings.tracker.gaOptions || {};
-  const gtagOptions = settings.tracker.gtagOptions || {};
+  const trackingId = settings.tracker?.id;
+  const gaOptions = settings.tracker?.gaOptions || {};
+  const gtagOptions = settings.tracker?.gtagOptions || {};
 
   if (__CLIENT__) {
     reactGa.default.initialize([
