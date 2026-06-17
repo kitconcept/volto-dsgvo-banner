@@ -6,14 +6,19 @@ const useSettings = () => {
   const dsgvoSiteSettings = useSelector(
     (state) => state.site?.data?.['kitconcept.website.dsgvo'],
   );
-  return {
-    // Use settings from kitconcept-website distribution control panel, if present.
-    ...{
-      showBanner: dsgvoSiteSettings?.show_banner ?? false,
-      modules: dsgvoSiteSettings?.modules ?? [],
+
+  const settings = {
+    showBanner: dsgvoSiteSettings?.show_banner ?? false,
+    modules: dsgvoSiteSettings?.modules ?? [],
+    tracker: {
+      type: dsgvoSiteSettings?.tracker ?? '',
+      ...(dsgvoSiteSettings?.tracker_options ?? {}),
     },
+    privacy_url: dsgvoSiteSettings?.privacy_url ?? '',
     ...config.settings.DSGVOBanner,
   };
+
+  return settings;
 };
 
 export default useSettings;
