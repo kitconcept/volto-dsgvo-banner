@@ -8,6 +8,12 @@
 
 <!-- towncrier release notes start -->
 
+## 4.0.0-alpha.2 (2026-06-19)
+
+### Feature
+
+- Google and Matomo trackers now respect tracker settings configured through the web (TTW) via the DSGVO control panel, taking priority over local Volto config. @iFlameing 
+
 ## 4.0.0-alpha.1 (2026-05-29)
 
 ### Feature
