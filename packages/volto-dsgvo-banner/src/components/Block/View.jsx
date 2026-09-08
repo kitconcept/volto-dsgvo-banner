@@ -110,7 +110,7 @@ const View = (props) => {
 
   return (
     <>
-      <Form>
+      <Form className="dsgvo-settings">
         {showTechnicallyRequired && (
           <Form.Field>
             <Checkbox

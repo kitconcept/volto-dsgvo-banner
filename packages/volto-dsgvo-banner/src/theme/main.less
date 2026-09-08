@@ -1,3 +1,42 @@
+// Fix A11y color contrast
+.ui.modal.dsgvo-banner,
+.ui.form.dsgvo-settings {
+  .ui.button.olive {
+    background-color: #637510;
+    color: #fff;
+
+    &:hover,
+    &:focus,
+    &:active {
+      background-color: #52610d;
+      color: #fff;
+    }
+  }
+  .ui.button.blue {
+    background-color: #006b99;
+    color: #fff;
+
+    &:hover,
+    &:focus,
+    &:active {
+      background-color: #00577d;
+      color: #fff;
+    }
+
+    &.inverted {
+      background-color: #fff;
+      color: #006b99;
+
+      &:hover,
+      &:focus,
+      &:active {
+        background-color: #006b99;
+        color: #fff;
+      }
+    }
+  }
+}
+
 // DSGVO Modal
 .ui.modal.dsgvo-banner {
   .actions {
