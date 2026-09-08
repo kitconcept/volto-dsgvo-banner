@@ -1,4 +1,4 @@
-// Fix DSGVO Banner a11y
+// Darker shades of the default palette keep white button text above 4.5:1.
 .ui.modal.dsgvo-banner,
 .ui.form.dsgvo-settings {
   .ui.button.olive {
@@ -12,7 +12,31 @@
       color: #fff;
     }
   }
+  .ui.button.blue {
+    background-color: #006b99;
+    color: #fff;
+
+    &:hover,
+    &:focus,
+    &:active {
+      background-color: #00577d;
+      color: #fff;
+    }
+
+    &.inverted {
+      background-color: #fff;
+      color: #006b99;
+
+      &:hover,
+      &:focus,
+      &:active {
+        background-color: #006b99;
+        color: #fff;
+      }
+    }
+  }
 }
+
 // DSGVO Modal
 .ui.modal.dsgvo-banner {
   .actions {
