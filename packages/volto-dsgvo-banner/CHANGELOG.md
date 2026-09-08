@@ -8,6 +8,12 @@
 
 <!-- towncrier release notes start -->
 
+## 4.0.0-alpha.3 (2026-09-08)
+
+### Bugfix
+
+- Fix DSGVO Banner a11y color contrast @iRohitSingh [#DSGVO_a11y](https://github.com/kitconcept/volto-dsgvo-banner/issue/DSGVO_a11y)
+
 ## 4.0.0-alpha.2 (2026-06-19)
 
 ### Feature
