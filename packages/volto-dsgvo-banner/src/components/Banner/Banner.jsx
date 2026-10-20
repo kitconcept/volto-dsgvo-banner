@@ -146,14 +146,29 @@ const Banner = (props) => {
     // eslint-disable-next-line react-hooks/exhaustive-deps
   }, []);
 
+  const [blocked, setBlocked] = useState(false);
+  const modalOpen = showConfirmModal && !blocked;
+
+  useEffect(() => {
+    if (!showConfirmModal) return;
+    const t = setTimeout(() => {
+      const el = document.getElementById('question-landing');
+      if (!el || el.getClientRects().length === 0) {
+        setBlocked(true);
+        document.body.classList.remove('dimmed', 'dimmable');
+      }
+    }, 500);
+    return () => clearTimeout(t);
+  }, [showConfirmModal]);
+
   return (
     <>
       {settings.tracker.type === 'google' && <Google />}
       {settings.tracker.type === 'matomo' && <Matomo />}
-      <BodyClass className={showConfirmModal ? 'openCookieBanner' : ''} />
+      <BodyClass className={modalOpen ? 'openCookieBanner' : ''} />
       <Modal
         id="question-landing"
-        open={showConfirmModal}
+        open={modalOpen}
         dimmer="inverted"
         closeOnDimmerClick={false}
         className="dsgvo-banner"
