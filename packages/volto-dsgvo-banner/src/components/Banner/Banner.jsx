@@ -155,9 +155,8 @@ const Banner = (props) => {
       const el = document.getElementById('question-landing');
       if (!el || el.getClientRects().length === 0) {
         setBlocked(true);
-        document.body.classList.remove('dimmed', 'dimmable');
       }
-    }, 500);
+    }, 200);
     return () => clearTimeout(t);
   }, [showConfirmModal]);
 
