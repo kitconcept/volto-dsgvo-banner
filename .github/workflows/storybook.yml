@@ -2,11 +2,12 @@ name: Storybook
 on:
   push:
     paths:
-      - "*.js"
-      - "*.json"
-      - "*.yaml"
-      - "packages/**"
-      - ".github/workflows/storybook.yml"
+      - '*.js'
+      - '*.json'
+      - '*.yaml'
+      - 'packages/**'
+      - '.storybook/**'
+      - '.github/workflows/storybook.yml'
 
 env:
   NODE_VERSION: 22
