@@ -1,0 +1,1 @@
+Adds a check so that if ad blockers remove elements with .dsgvo-banner it also removes the rest ob the banner. @TimoBroeskamp
