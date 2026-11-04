@@ -8,6 +8,12 @@
 
 <!-- towncrier release notes start -->
 
+## 4.0.1 (2026-11-03)
+
+### Bugfix
+
+- Adds a check so that if ad blockers remove elements with .dsgvo-banner it also removes the rest ob the banner. @TimoBroeskamp [#30](https://github.com/kitconcept/volto-dsgvo-banner/issue/30)
+
 ## 4.0.0 (2026-09-16)
 
 ## 4.0.0-alpha.3 (2026-09-08)
