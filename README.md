@@ -97,6 +97,10 @@ Start volto with:
 yarn start
 ```
 
+### Block documentation and schema
+
+The `@blocks-schema` support, which publishes the schema and documentation of the DSGVO Banner block (`dsgvoBanner`) from the Volto server, requires Volto 19.6 or later. The add-on keeps working on older Volto 19 without it.
+
 ## Test installation
 
 Visit http://localhost:3000/ in a browser, login, and check the awesome new features.

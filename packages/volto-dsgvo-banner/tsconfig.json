@@ -23,8 +23,11 @@
     "build",
     "public",
     "coverage",
-    "**/*.test.{js,jsx,ts,tsx}",
-    "**/*.spec.{js,jsx,ts,tsx}",
-    "**/*.stories.{js,jsx,ts,tsx}"
+    "**/*.test.ts",
+    "**/*.test.tsx",
+    "**/*.spec.ts",
+    "**/*.spec.tsx",
+    "**/*.stories.ts",
+    "**/*.stories.tsx"
   ]
 }
