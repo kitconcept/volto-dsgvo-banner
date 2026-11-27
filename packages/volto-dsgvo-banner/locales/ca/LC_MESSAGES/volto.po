@@ -40,6 +40,16 @@ msgstr "Enrere"
 msgid "Customize Privacy Settings"
 msgstr "Personalitzar la configuració de privacitat"
 
+#. Default: "DSGVO Banner"
+#: components/Block/index
+msgid "DSGVO Banner"
+msgstr ""
+
+#. Default: "Default"
+#: components/Block/index
+msgid "Default"
+msgstr ""
+
 #. Default: "Privacy Notice"
 #: components/Banner/Banner
 msgid "Privacy Notice"

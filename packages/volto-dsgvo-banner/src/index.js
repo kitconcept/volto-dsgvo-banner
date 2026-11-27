@@ -1,9 +1,7 @@
 import { Banner } from './components';
 import { IfConfirm } from './components';
 import { DSGVOBanner } from './reducers';
-import DSGVOBannerEdit from './components/Block/Edit';
-import DSGVOBannerView from './components/Block/View';
-import circleMenuSVG from '@plone/volto/icons/circle-menu.svg';
+import dsgvoBannerBlock from './components/Block';
 import loadable from '@loadable/component';
 
 import './theme/main.less';
@@ -46,21 +44,7 @@ const applyConfig = (config) => {
   config.settings.loadables['matomoTracker'] = loadable.lib(
     () => import('@datapunt/matomo-tracker-js'),
   );
-  config.blocks.blocksConfig.dsgvoBanner = {
-    id: 'dsgvoBanner',
-    title: 'DSGVO Banner',
-    icon: circleMenuSVG,
-    group: 'common',
-    view: DSGVOBannerView,
-    edit: DSGVOBannerEdit,
-    restricted: false,
-    mostUsed: false,
-    sidebarTab: 0,
-    security: {
-      addPermission: [],
-      view: [],
-    },
-  };
+  config.blocks.blocksConfig.dsgvoBanner = dsgvoBannerBlock;
   config.registerComponent({
     name: 'CheckPrivacyConsent',
     component: IfConfirm,
